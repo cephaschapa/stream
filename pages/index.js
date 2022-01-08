@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Stream-IO</title>
+        <title>Stream-IO - Fast, Reliable, Secure Confrencing</title>
       </Head>
       {/* Header */}
       <Header />
