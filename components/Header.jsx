@@ -17,7 +17,7 @@ function Header() {
                     <div className="grid grid-cols-2 w-full">
                         <div className="flex space-x-2 relative items-center">
                             <div className="relative h-12 w-12">
-                            <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover"/>
+                            <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover" alt="streamio-logo"/>
                             </div>
                             <span className="text-2xl text-gray-600">StreamIO</span>
                         </div>
@@ -32,7 +32,7 @@ function Header() {
                             </ul>
                         </div>
                         <div className="flex lg:hidden items-center justify-end">
-                            <button onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-full  border-gray-500 p-1">
+                            <button name="Menu Button" na onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-full  border-gray-500 p-1">
                                 {/* <MenuAlt3Icon className="h-8 w-8 font-light text-gray-500"/> */}
                                 <div className="w-7 border border-gray-500 rounded-full"></div>
                                 <div className="w-7 border border-gray-500 rounded-full"></div>
