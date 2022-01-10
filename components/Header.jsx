@@ -12,7 +12,7 @@ function Header() {
     
     return (
         <div>
-            <header className="h-16 w-full bg-white shadow-md fixed top-0 z-50">
+            <header className="h-16 lg:h-20 w-full bg-white shadow-md fixed top-0 z-50">
                 <Wrapper>
                     <div className="grid grid-cols-2 w-full">
                         <div className="flex space-x-2 relative items-center">
