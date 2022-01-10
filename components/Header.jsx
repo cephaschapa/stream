@@ -27,12 +27,12 @@ function Header() {
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">About</li>
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">Team</li>
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">FAQ</li>
-                                <button className="text-white bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Login</button>
-                                <button className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Sign Up</button>
+                                <button aria-label="Sign In" className="text-white bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Login</button>
+                                <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Sign Up</button>
                             </ul>
                         </div>
                         <div className="flex lg:hidden items-center justify-end">
-                            <button name="Menu Button" na onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-full  border-gray-500 p-1">
+                            <button aria-label="Menu" name="Menu Button" na onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-full  border-gray-500 p-1">
                                 {/* <MenuAlt3Icon className="h-8 w-8 font-light text-gray-500"/> */}
                                 <div className="w-7 border border-gray-500 rounded-full"></div>
                                 <div className="w-7 border border-gray-500 rounded-full"></div>
