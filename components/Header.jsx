@@ -27,7 +27,7 @@ function Header() {
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">About</li>
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">Team</li>
                                 <li className="text-black cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">FAQ</li>
-                                <button aria-label="Sign In" className="text-white bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Login</button>
+                                <button aria-label="Sign In" className="text-white  bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Login</button>
                                 <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Sign Up</button>
                             </ul>
                         </div>

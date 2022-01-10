@@ -10,14 +10,14 @@ const Hero = () => {
                     <h1 className="font-bold lg:text-8xl text-center text-6xl text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
                     <p className="text-[#16A34A] lg:text-2xl">Hold incredible events, share knowledge, build and grow your community, create opportunity.</p>
                     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
-                        <button className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 rounded-full w-full bg-green-600 text-white">Start a Meeting</button>
+                        <button className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Start a Meeting</button>
                         <div className="lg:w-1/2">
                             <form className="flex rounded-full border border-green-600 bg-white h-16 shadow-md">
                                 <div className="flex space-x-2 items-center w-full pl-5">
                                     <LockClosedIcon className="h-6 w-6 text-gray-500"/>
                                     <input className="outline-none w-full" placeholder="Meeting Code"/>
                                 </div>
-                                <button className="px-5 p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
+                                <button className="px-5 font-bold p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
                             </form>
                         </div>
                     </div>
