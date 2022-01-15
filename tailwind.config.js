@@ -1,8 +1,11 @@
 module.exports = {
+  darkMode: 'class',
+  mode: "jit",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  
   theme: {
     extend: {
       animation: {
@@ -54,5 +57,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }

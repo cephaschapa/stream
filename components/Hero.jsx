@@ -14,11 +14,11 @@ const Hero = () => {
 
     return (
         <>
-            <div className="pt-16 flex lg:justify-center streamio-hero h-screen w-full">
+            <main className="pt-16 bg-white duration-300 transition dark:bg-slate-800 flex lg:justify-center streamio-hero h-screen w-full">
                 <Wrapper>
                     <div className="flex lg:items-center flex-col space-y-5">
-                        <h1 className="font-bold lg:text-8xl text-center text-6xl text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
-                        <p className="text-[#16A34A] lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
+                        <h1 className="font-bold lg:text-8xl dark:text-white text-center text-6xl text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
+                        <p className="text-[#16A34A] dark:text-white lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
                             {
                                 isLoggedIn ? <button type="button" onClick={toggle} className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button> : <Link href="/login">
@@ -27,10 +27,10 @@ const Hero = () => {
                             }
 
                             <div className="lg:w-1/2">
-                                <form className="flex rounded-full border border-green-600 bg-white h-16 shadow-md">
+                                <form className="flex rounded-full border border-green-600 dark:border-none transition duration-300 dark:bg-slate-600 bg-white h-16 shadow-md">
                                     <div className="flex space-x-2 items-center w-full pl-5">
-                                        <LockClosedIcon className="h-6 w-6 text-gray-500"/>
-                                        <input className="outline-none w-full" placeholder="Meeting Code"/>
+                                        <LockClosedIcon className="h-6 w-6 text-gray-500 dark:text-white"/>
+                                        <input className="outline-none w-full dark:text-white bg-transparent" placeholder="Meeting Code"/>
                                     </div>
                                     <button className="px-5 font-bold p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
                                 </form>
@@ -38,7 +38,7 @@ const Hero = () => {
                         </div>
                     </div>
                 </Wrapper>
-            </div>
+            </main>
             <Modal isOpen={isOpen} toggle={toggle}>
                 <ModalHeader>Schedule a meeting</ModalHeader>
                 <ModalBody>
