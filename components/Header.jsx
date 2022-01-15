@@ -255,8 +255,8 @@ const style2 = {
   orientation: {
     right: `flex w-8/12 md:w-80 lg:w-96 h-full right-0 mx-0 my-0 absolute focus:outline-none `,
   },
-  body: `flex-shrink flex-grow p-4`,
-  headerTitle: `text-2xl md:text-3xl font-light`,
+  body: `flex-shrink flex-grow p-4 dark:text-white`,
+  headerTitle: `text-2xl md:text-3xl font-light dark:text-white`,
   content: `relative w-screen flex flex-col bg-white dark:bg-slate-800 duration-300 transition pointer-events-auto`,
   header: `items-start justify-between p-4`,
   container: `fixed top-0 left-0 z-50 w-full h-full m-0 overflow-hidden`,
