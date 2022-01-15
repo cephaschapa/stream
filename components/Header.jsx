@@ -36,7 +36,7 @@ function Header() {
     
     return (
         <div>
-            <header className="h-16 bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-50">
+            <header className="h-16 bg-opacity-5 dark:bg-opacity-5 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-50">
                 <Wrapper>
                     <div className="grid grid-cols-2 w-full">
                         <div className="flex space-x-2 relative items-center">
@@ -257,7 +257,7 @@ const style2 = {
   },
   body: `flex-shrink flex-grow p-4 dark:text-white`,
   headerTitle: `text-2xl md:text-3xl font-light dark:text-white`,
-  content: `relative w-screen flex flex-col bg-white dark:bg-slate-800 duration-300 transition pointer-events-auto`,
+  content: `relative w-screen flex flex-col bg-white dark:bg-slate-800 duration-300 transition pointer-events-auto bg-opacity-60 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg`,
   header: `items-start justify-between p-4`,
   container: `fixed top-0 left-0 z-50 w-full h-full m-0 overflow-hidden`,
   overlay: `fixed top-0 left-0 z-50 w-screen h-screen bg-black opacity-50`,
