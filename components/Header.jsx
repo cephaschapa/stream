@@ -13,14 +13,6 @@ function Header() {
 
     const {theme, setTheme} = useTheme();
 
-    React.useEffect(() => {
-      
-       
-        console.log(theme)
-        console.log('df')
-    
-    }, [theme]);
-
     const [open, setOpen] = React.useState(false);
     const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
@@ -179,8 +171,8 @@ function Header() {
                 </button>
                 <MenuContainer>
                 <MenuItem href="#">Home</MenuItem>
+                <MenuItem href="#">Features</MenuItem>
                 <MenuItem href="#">About</MenuItem>
-                <MenuItem href="#">Team</MenuItem>
                 <MenuItem href="#">FAQ</MenuItem>
                 <Link href="/login">
                   <button className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
@@ -213,7 +205,7 @@ export default Header
 /* Logic*/
 const style = {
     container: `relative p-3 top-1/4 w-full text-center mt-8`,
-    item: `text-3xl text-gray-600 cursor-pointer hover:text-white dark:text-white`,
+    item: `text-lg font-bold text-gray-600 cursor-pointer hover:bg-slate-100 p-3 rounded-full dark:text-white`,
     menu: {
       open: `h-full w-full `,
       close: `w-full h-0`,
