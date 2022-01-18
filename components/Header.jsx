@@ -179,19 +179,19 @@ function Header() {
                 </Link>
                 <button className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
-                  <p className="dark:text-white font-bold">THEME</p>
-                  <div className="flex justify-around">
+                  <p className="dark:text-white font-bold">THEME PREFERENCE</p>
+                  <div className="flex justify-center space-x-2">
                     <button onClick={()=>{
                       setTheme('light')
                       
-                    }} className=" border-2 dark:border-slate-600 flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
-                        <p className="dark:text-white">Light Mode</p>
+                    }} className=" border-2 dark:border-slate-600 flex items-center justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
+                        <p className="dark:text-white"></p>
                          <SunIcon className="h-6 w-6 dark:text-white"/>            
                     </button>
                     <button onClick={()=>{
                         setTheme('dark')
-                    }} className=" border-2 dark:border-slate-600  flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
-                        <span className="dark:text-white">Dark Mode</span>
+                    }} className=" border-2 dark:border-slate-600  flex items-center justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
+                        <span className="dark:text-white"></span>
                         <MoonIcon className="h-6 w-6 dark:text-white text-slate-500"/>      
                     </button>
                   </div>
