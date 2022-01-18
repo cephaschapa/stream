@@ -177,20 +177,20 @@ function Header() {
                 <Link href="/login">
                   <button className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
                 </Link>
-                <button className="border border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
+                <button className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
                   <p className="dark:text-white font-bold">THEME</p>
                   <div className="flex justify-around">
                     <button onClick={()=>{
                       setTheme('light')
                       
-                    }} className=" border  flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
+                    }} className=" border-2 dark:border-slate-600 flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
                         <p className="dark:text-white">Light Mode</p>
                          <SunIcon className="h-6 w-6 dark:text-white"/>            
                     </button>
                     <button onClick={()=>{
                         setTheme('dark')
-                    }} className=" border  flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
+                    }} className=" border-2 dark:border-slate-600  flex items-center space-x-2 justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
                         <span className="dark:text-white">Dark Mode</span>
                         <MoonIcon className="h-6 w-6 dark:text-white text-slate-500"/>      
                     </button>
