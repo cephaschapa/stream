@@ -1,3 +1,5 @@
+const withPWA = require('next-pwa')
+
 module.exports = {
   reactStrictMode: true,
   i18n: {
@@ -5,3 +7,11 @@ module.exports = {
     defaultLocale: "en",
   },
 }
+
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+});

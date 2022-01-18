@@ -251,7 +251,7 @@ const style2 = {
   },
   body: `flex-shrink flex-grow p-4 dark:text-white`,
   headerTitle: `text-2xl md:text-3xl font-light dark:text-white`,
-  content: `relative w-screen flex flex-col bg-white dark:bg-slate-800 duration-300 transition pointer-events-auto bg-opacity-60 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg`,
+  content: `relative w-screen flex flex-col bg-white dark:bg-slate-800 duration-300 transition pointer-events-auto`,
   header: `items-start justify-between p-4`,
   container: `fixed top-0 left-0 z-50 w-full h-full m-0 overflow-hidden`,
   overlay: `fixed top-0 left-0 z-50 w-screen h-screen bg-black opacity-50`,
