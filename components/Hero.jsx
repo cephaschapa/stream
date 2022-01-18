@@ -21,8 +21,8 @@ const Hero = () => {
                         <p className="text-[#16A34A] dark:text-white lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
                             {
-                                isLoggedIn ? <button type="button" onClick={toggle} className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button> : <Link href="/login">
-                                <button type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button>
+                                isLoggedIn ? <button aria-label="Schedule a meeting" type="button" onClick={toggle} className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button> : <Link href="/login">
+                                <button aria-label="Schedule a meeting" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button>
                             </Link>
                             }
 
@@ -32,7 +32,7 @@ const Hero = () => {
                                         <LockClosedIcon className="h-6 w-6 text-gray-500 dark:text-white"/>
                                         <input className="outline-none w-full dark:text-white bg-transparent" placeholder="Meeting Code"/>
                                     </div>
-                                    <button className="px-5 font-bold p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
+                                    <button aria-label="Join a meeting" className="px-5 font-bold p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
                                 </form>
                             </div>
                         </div>

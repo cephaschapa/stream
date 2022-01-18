@@ -55,13 +55,13 @@ function Header() {
                                   </DropdownToggle>
                                   <DropdownMenu>
                                     
-                                      <button onClick={()=>setTheme('dark')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
+                                      <button aria-label="Set dark mode" onClick={()=>setTheme('dark')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
                                         <MoonIcon className="h-6 w-6 dark:text-white"/>
                                         <p className="font-bold">Deep Space (Dark)</p>
                                       </button>
                                     
                                     
-                                    <button onClick={()=>setTheme('light')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
+                                    <button aria-label="Set light mode" onClick={()=>setTheme('light')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
                                         <SunIcon className="h-6 w-6 dark:text-white"/>
                                         <p className="font-bold">Procyon (light)</p>
                                       </button>
@@ -177,7 +177,7 @@ function Header() {
                 <Link href="/login">
                   <button className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
                 </Link>
-                <button className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
+                <button aria-label="Set light mode" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
                   <p className="dark:text-white font-bold">THEME PREFERENCE</p>
                   <div className="flex justify-center space-x-2">
@@ -188,7 +188,7 @@ function Header() {
                         <p className="dark:text-white"></p>
                          <SunIcon className="h-6 w-6 dark:text-white"/>            
                     </button>
-                    <button onClick={()=>{
+                    <button aria-label="Set dark mode" onClick={()=>{
                         setTheme('dark')
                     }} className=" border-2 dark:border-slate-600  flex items-center justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
                         <span className="dark:text-white"></span>
