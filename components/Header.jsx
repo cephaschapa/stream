@@ -175,20 +175,20 @@ function Header() {
                 <MenuItem href="#">About</MenuItem>
                 <MenuItem href="#">FAQ</MenuItem>
                 <Link href="/login">
-                  <button className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
+                  <button aria-label="Login" className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
                 </Link>
-                <button aria-label="Set light mode" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
+                <button aria-label="Theme" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
                   <p className="dark:text-white font-bold">THEME PREFERENCE</p>
                   <div className="flex justify-center space-x-2">
-                    <button onClick={()=>{
+                    <button aria-label="Light" onClick={()=>{
                       setTheme('light')
                       
                     }} className=" border-2 dark:border-slate-600 flex items-center justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
                         <p className="dark:text-white"></p>
                          <SunIcon className="h-6 w-6 dark:text-white"/>            
                     </button>
-                    <button aria-label="Set dark mode" onClick={()=>{
+                    <button aria-label="Dark" onClick={()=>{
                         setTheme('dark')
                     }} className=" border-2 dark:border-slate-600  flex items-center justify-center text-gray-6 font-bold p-4 uppercase rounded-2xl">
                         <span className="dark:text-white"></span>
