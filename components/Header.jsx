@@ -14,7 +14,7 @@ function Header() {
     const {theme, setTheme} = useTheme();
 
     const [open, setOpen] = React.useState(false);
-    const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
     const toggle = () => {
         setOpen((prevState) => !prevState);
@@ -35,7 +35,7 @@ function Header() {
                             <div className="relative h-12 w-12">
                             <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover" alt="streamio-logo"/>
                             </div>
-                            <span className="text-2xl dark:text-white text-gray-600">StreamIO</span>
+                            <span className="text-2xl font-bold dark:text-white text-gray-600">StreamIO</span>
                         </div>
                         <div className="hidden lg:flex justify-end items-center w-full">
                             <ul className="flex space-x-4 text-black items-center">
@@ -76,10 +76,10 @@ function Header() {
                                     <span>Cephas Chapa</span>
                                   </button> : <>
                                     <Link href="/login">
-                                      <button aria-label="Sign In" className="text-white  bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Login</button>
+                                      <button aria-label="Sign In" className="text-white  bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase">Login</button>
                                     </Link>
                                     <Link href="/register">
-                                      <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32">Sign Up</button>
+                                      <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase dark:border-none">Sign Up</button>
                                     </Link>
                                   </>
                                 }
@@ -177,7 +177,9 @@ function Header() {
                 <Link href="/login">
                   <button aria-label="Login" className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
                 </Link>
-                <button aria-label="Theme" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
+                <Link href="/register">
+                  <button aria-label="Theme" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
+                </Link>
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
                   <p className="dark:text-white font-bold">THEME PREFERENCE</p>
                   <div className="flex justify-center space-x-2">
