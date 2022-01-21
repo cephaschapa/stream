@@ -1,12 +1,12 @@
 import NextAuth from 'next-auth';
-import GithubProvidor from 'next-auth/providers/github';
+import GithubProvider from 'next-auth/providers/github';
 
 export default NextAuth({
     providers: [
-        GithubProvidor(
+        GithubProvider(
             {
-                clientId: process.env.GITHUB_ID,
-                clientSecret: process.env.GITHUB_SECRET
+                clientId: "Iv1.93ca5170f2fe45c5",
+                clientSecret: "63ad06a6a364fb91a85c6524190a88d32a702ad2"
             }
         )
 
