@@ -1,27 +1,19 @@
-import { LockClosedIcon, MailIcon } from "@heroicons/react/outline"
-import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
+import { LockClosedIcon, MailIcon } from "@heroicons/react/outline";
+import Head from "next/head";
+import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "../components/Header";
 
 const LoginPage = () => {
+    const {data: session} = useSession();
+
     return (
         <div>
             <Head>
-        {/* Meta */}
-                <meta name="description" content="Stream-IO - Fast, Reliable, Secure Confrencing"/>
-                <meta name='robots' content='index, follow'/>
-                <meta property="og:type" content="Stream-IO - Fast, Reliable, Secure Confrencing" />
-                <meta property="og:title" content="Stream-IO - Fast, Reliable, Secure Confrencing" />
-                <meta property="og:description" content="Stream-IO - Fast, Reliable, Secure Confrencing" />
-                <meta property="og:image" content="/assets/images/logo1.svg" />
-                <meta property="og:url" content="https://streamio.cephaschapa.xyz" />
-                <meta property="og:site_name" content="Stream-IO - Fast, Reliable, Secure Confrencing" />
-                
-                {/* Links */}
-                <link rel='canonical' href='https://streamio.cephaschapa.xyz'/>
-                <link rel="icon" href="/assets/images/logo1.svg" />
                 <title>Stream-IO - Register</title>
             </Head>
+            <Header />
 
             <main className="flex streamio-hero dark:bg-slate-800 h-screen items-center justify-center">
                 <div className="flex w-full">
@@ -57,9 +49,9 @@ const LoginPage = () => {
                                 </form>
                                 <p className="text-center dark:text-white uppercase">Or Login with</p>
                                 <div className="flex justify-center space-x-3">
-                                    <div className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
+                                    <button onClick={() => signIn()} className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
                                         <Image src='/assets/images/facebook.png' layout="fill" objectFit="cover" />
-                                    </div>
+                                    </button>
                                     <div className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
                                         <Image src='/assets/images/google.png' layout="fill" objectFit="cover" />
                                     </div>

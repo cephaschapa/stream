@@ -2,8 +2,9 @@ import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from 'next/router';
+import {SessionProvider} from 'next-auth/react'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: {session, ...pageProps} }) {
   // const Router = useRouter()
   const progress = new ProgressBar({
     size: 4,
@@ -18,9 +19,11 @@ function MyApp({ Component, pageProps }) {
 
  
   return (
-    <ThemeProvider attribute='class'>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider attribute='class'>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionProvider>
   )
 }
 
