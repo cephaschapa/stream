@@ -74,8 +74,8 @@ const LoginPage = () => {
                             
                         </div>
                         <div className="hidden px-10 lg:flex lg:flex-col lg:items-center lg:justify-center bg-opacity-5 dark:bg-opacity-5 backdrop-filter backdrop-blur-lg lg:shadow-none border dark:border-slate-700 shadow-md bg-slate-900 w-1/4 h-full lg:rounded-r-2xl">
-                            <div class="w-full carousel">
-                                <div id="item1" class="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                            <div className="w-full carousel">
+                                <div id="item1" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
                                     <div className="relative w-full h-60">
                                         <Image className="rounded-lg" src="/assets/images/discussion.svg" layout="fill" objectFit="contain"/>
                                     </div>
@@ -84,7 +84,7 @@ const LoginPage = () => {
                                         <p className="text-slate-800 text-center dark:text-slate-200">Your data is safe with us</p>
                                     </div>
                                 </div> 
-                                <div id="item2" class="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                <div id="item2" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
                                     <div className="relative w-full h-60">
                                         <Image className="rounded-lg" src="/assets/images/messaging.svg" layout="fill" objectFit="contain"/>
                                     </div>
@@ -93,7 +93,7 @@ const LoginPage = () => {
                                         <p className="text-gray-200 text-center">Your data is safe with us</p>
                                     </div>
                                 </div> 
-                                <div id="item3" class="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                <div id="item3" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
                                     <div className="relative w-full h-60">
                                         <Image className="rounded-lg" src="/assets/images/conference.svg" layout="fill" objectFit="contain"/>
                                     </div>
@@ -102,7 +102,7 @@ const LoginPage = () => {
                                         <p className="text-gray-200 text-center">Your data is safe with us</p>
                                     </div>
                                 </div>
-                                <div id="item4" class="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                <div id="item4" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
                                     <div className="relative w-full h-60">
                                         <Image className="rounded-lg" src="/assets/images/collaboration.svg" layout="fill" objectFit="contain"/>
                                     </div>
@@ -112,11 +112,11 @@ const LoginPage = () => {
                                     </div>
                                 </div> 
                             </div> 
-                            <div class="flex justify-center w-full py-4 space-x-2 pt-10">
-                                <a href="#item1" class="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item2" class="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item3" class="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item4" class="w-8 rounded-full h-2 bg-green-600"></a>
+                            <div className="flex justify-center w-full py-4 space-x-2 pt-10">
+                                <a href="#item1" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                <a href="#item2" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                <a href="#item3" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                <a href="#item4" className="w-8 rounded-full h-2 bg-green-600"></a>
                             </div>
 
                         </div>
