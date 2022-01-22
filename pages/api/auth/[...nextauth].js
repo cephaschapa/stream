@@ -11,8 +11,8 @@ export default NextAuth({
     providers: [
         GithubProvider(
             {
-                clientId: "Iv1.93ca5170f2fe45c5",
-                clientSecret: "63ad06a6a364fb91a85c6524190a88d32a702ad2"
+                clientId: process.env.GITHUB_ID,
+                clientSecret: process.env.GITHUB_SECRET
             }
         ),
         // GoogleProvider({
@@ -35,5 +35,6 @@ export default NextAuth({
         //     clientId: process.env.INSTAGRAM_CLIENT_ID,
         //     clientSecret: process.env.INSTAGRAM_CLIENT_SECRET
         // })
-    ]
+    ],
+    secret: "k40SfY8ML34vylVPkWtwQ9tFwQ183i4h/W6IcURn4c8="
 })
