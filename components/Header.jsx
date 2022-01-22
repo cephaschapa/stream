@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image";
 import Wrapper from "./Wrapper";
-import { ChevronDoubleDownIcon, ChevronDownIcon, ColorSwatchIcon, MenuAlt3Icon, MoonIcon, SunIcon, UserCircleIcon, UserGroupIcon, UserIcon } from '@heroicons/react/outline';
+import { ChevronDoubleDownIcon, ChevronDownIcon, ColorSwatchIcon, MenuAlt3Icon, MoonIcon, SunIcon, UserCircleIcon, UserGroupIcon, UserIcon, XIcon } from '@heroicons/react/outline';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
 import Portal from '@reach/portal';
@@ -28,7 +28,7 @@ function Header() {
     
     return (
         <div>
-            <header className="h-16 bg-opacity-5 dark:bg-opacity-5 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-50">
+            <header className="h-16 bg-opacity-5 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-0 lg:z-50">
                 <Wrapper>
                     <div className="grid grid-cols-2 w-full">
                         <div className="flex space-x-2 relative items-center">
@@ -55,13 +55,13 @@ function Header() {
                                   </DropdownToggle>
                                   <DropdownMenu>
                                     
-                                      <button aria-label="Set dark mode" onClick={()=>setTheme('dark')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
+                                      <button aria-label="Dark" onClick={()=>setTheme('dark')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
                                         <MoonIcon className="h-6 w-6 dark:text-white"/>
                                         <p className="font-bold">Deep Space (Dark)</p>
                                       </button>
                                     
                                     
-                                    <button aria-label="Set light mode" onClick={()=>setTheme('light')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
+                                    <button aria-label="Light" onClick={()=>setTheme('light')} className="flex p-3 hover:bg-slate-300 w-full transition duration-200 rounded-full my-2 dark:hover:bg-slate-700 dark:text-white items-center space-x-2 whitespace-nowrap">
                                         <SunIcon className="h-6 w-6 dark:text-white"/>
                                         <p className="font-bold">Procyon (light)</p>
                                       </button>
@@ -87,7 +87,7 @@ function Header() {
                             </ul>
                         </div>
                         <div className="flex lg:hidden items-center justify-end">
-                            <button aria-label="Menu" name="Menu Button" onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-2xl  border-gray-500 p-1">
+                            <button aria-label="Menu" name="Menu Button" onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-2xl  border-white p-1">
                                 {/* <MenuAlt3Icon className="h-8 w-8 font-light text-gray-500"/> */}
                                 <div className="w-7 bg-white transition duration-300 dark:border-slate-100 border border-gray-500 rounded-full"></div>
                                 <div className="w-7 bg-white transition duration-300 dark:border-slate-100 border border-gray-500 rounded-full"></div>
@@ -164,10 +164,10 @@ function Header() {
             <Menu open={open}>
                 <button
                 aria-label="Close"
-                className="absolute top-3 right-3 text-5xl text-white cursor-pointer"
+                className="absolute p-2 top-3 rounded-2xl right-5 border text-5xl text-white cursor-pointer"
                 onClick={toggle}
                 >
-                &times;
+                  <XIcon className="h-7 w-7"/>
                 </button>
                 <MenuContainer>
                 <MenuItem href="#">Home</MenuItem>
@@ -208,12 +208,12 @@ export default Header
 
 /* Logic*/
 const style = {
-    container: `relative p-3 top-1/4 w-full text-center mt-8`,
+    container: `relative z-50 p-3 top-1/4 w-full text-center mt-8`,
     item: `text-lg font-bold text-gray-600 cursor-pointer hover:bg-slate-100 p-3 rounded-full dark:text-white`,
     menu: {
       open: `h-full w-full `,
       close: `w-full h-0`,
-      default: `overflow-x-hidden shadow-md md:overflow-hidden transition-all duration-700 fixed z-10 top-0 left-0 bg-white transition duration-300 dark:bg-slate-800`,
+      default: `overflow-x-hidden shadow-md md:overflow-hidden transition-all duration-300 fixed z-10 top-0 left-0 bg-white transition duration-300 dark:bg-slate-800`,
     },
   };
   

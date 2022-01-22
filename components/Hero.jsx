@@ -14,10 +14,10 @@ const Hero = () => {
 
     return (
         <>
-            <main className="pt-16 bg-white duration-300 transition dark:bg-slate-800 flex lg:justify-center streamio-hero h-screen w-full">
+            <main className="pt-16 bg-white duration-300 transition dark:bg-slate-800 flex lg:justify-center streamio-hero h-screen w-screen">
                 <Wrapper>
                     <div className="flex lg:items-center flex-col space-y-5">
-                        <h1 className="font-bold lg:text-8xl dark:text-white text-center text-6xl text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
+                        <h1 className="font-bold lg:text-8xl dark:text-white text-center text-5xl  text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
                         <p className="text-[#16A34A] dark:text-white lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
                             {
