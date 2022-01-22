@@ -1,11 +1,14 @@
 import { useSession, signOut } from "next-auth/react";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import AppHeader from '../../components/AppComponents/AppHeader';
+
+
 
 const AccountPage = () =>{
     const {data: session} = useSession();
     const router = useRouter()
-    console.log(session);
+
 
     useEffect(()=>{
         if(!session){
@@ -20,8 +23,8 @@ const AccountPage = () =>{
     }
     return(
         <div>
-            <p>Account</p>
-            <button onClick={signOutHandler}>Sign Out</button>
+            <AppHeader session={session}/>
+            {/* <AppBootomNav /> */}
         </div>
     );
 }

@@ -12,9 +12,7 @@ const LoginPage = () => {
     const {data: session} = useSession();
     console.log(session)
     if(session){
-        
-        router.replace('/account');
-
+        router.replace('/app/');
     }
 
     return (
