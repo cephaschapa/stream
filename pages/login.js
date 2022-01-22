@@ -4,14 +4,23 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
+    const router = useRouter();
+
     const {data: session} = useSession();
+    console.log(session)
+    if(session){
+        
+        router.replace('/account');
+
+    }
 
     return (
         <div>
             <Head>
-                <title>Stream-IO - Register</title>
+                <title>Stream-IO - Login</title>
             </Head>
             <Header />
 
@@ -19,7 +28,13 @@ const LoginPage = () => {
                 <div className="flex w-full">
                     <div className="flex items-center justify-center w-full px-3">
                         <div className="flex border lg:border-r-0 dark:border-none lg:shadow-none shadow-lg lg:w-1/4 lg:px-10 space-y-3 p-2 py-10 flex-col bg-white dark:bg-slate-700 rounded-2xl lg:rounded-r-none  w-full items-center justify-center">
-                            <div className="flex flex-col items-center justify-center">
+                            {
+                                session && <p>Signing you in ...</p> 
+                            }
+                            {
+                                !session && <>
+                                    <div>
+                                    <div className="flex flex-col items-center justify-center">
                                 <div className="relative h-20 w-20">
                                     <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover" alt="streamio-logo"/>
                                 </div>
@@ -75,42 +90,44 @@ const LoginPage = () => {
                                         <p className="text-slate-800 text-center dark:text-white text-3xl font-bold">Enjoy secure and quality video conferencing</p>
                                         <p className="text-slate-800 text-center dark:text-slate-200">Your data is safe with us</p>
                                     </div>
+                                    </div> 
+                                    <div id="item2" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                        <div className="relative w-full h-60">
+                                            <Image className="rounded-lg" src="/assets/images/messaging.svg" layout="fill" objectFit="contain"/>
+                                        </div>
+                                        <div>
+                                            <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
+                                            <p className="text-gray-200 text-center">Your data is safe with us</p>
+                                        </div>
+                                    </div> 
+                                    <div id="item3" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                        <div className="relative w-full h-60">
+                                            <Image className="rounded-lg" src="/assets/images/conference.svg" layout="fill" objectFit="contain"/>
+                                        </div>
+                                        <div>
+                                            <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
+                                            <p className="text-gray-200 text-center">Your data is safe with us</p>
+                                        </div>
+                                    </div>
+                                    <div id="item4" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
+                                        <div className="relative w-full h-60">
+                                            <Image className="rounded-lg" src="/assets/images/collaboration.svg" layout="fill" objectFit="contain"/>
+                                        </div>
+                                        <div>
+                                            <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
+                                            <p className="text-gray-200 text-center">Your data is safe with us</p>
+                                        </div>
+                                    </div> 
                                 </div> 
-                                <div id="item2" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
-                                    <div className="relative w-full h-60">
-                                        <Image className="rounded-lg" src="/assets/images/messaging.svg" layout="fill" objectFit="contain"/>
-                                    </div>
-                                    <div>
-                                        <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
-                                        <p className="text-gray-200 text-center">Your data is safe with us</p>
-                                    </div>
-                                </div> 
-                                <div id="item3" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
-                                    <div className="relative w-full h-60">
-                                        <Image className="rounded-lg" src="/assets/images/conference.svg" layout="fill" objectFit="contain"/>
-                                    </div>
-                                    <div>
-                                        <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
-                                        <p className="text-gray-200 text-center">Your data is safe with us</p>
-                                    </div>
+                                <div className="flex justify-center w-full py-4 space-x-2 pt-10">
+                                    <a href="#item1" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                    <a href="#item2" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                    <a href="#item3" className="w-8 rounded-full h-2 bg-green-600"></a> 
+                                    <a href="#item4" className="w-8 rounded-full h-2 bg-green-600"></a>
                                 </div>
-                                <div id="item4" className="flex flex-col space-y-5 w-full rounded-2xl carousel-item">
-                                    <div className="relative w-full h-60">
-                                        <Image className="rounded-lg" src="/assets/images/collaboration.svg" layout="fill" objectFit="contain"/>
                                     </div>
-                                    <div>
-                                        <p className="text-white text-center text-3xl font-bold">Enjoy secure and quality video conferencing</p>
-                                        <p className="text-gray-200 text-center">Your data is safe with us</p>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div className="flex justify-center w-full py-4 space-x-2 pt-10">
-                                <a href="#item1" className="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item2" className="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item3" className="w-8 rounded-full h-2 bg-green-600"></a> 
-                                <a href="#item4" className="w-8 rounded-full h-2 bg-green-600"></a>
-                            </div>
-
+                                </>
+                            }
                         </div>
                     </div>
                     
