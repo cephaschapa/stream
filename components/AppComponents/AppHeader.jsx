@@ -27,7 +27,7 @@ const AppHeader = ({session}) => {
         setIsOpen(!isOpen);
     };
     return(
-        <header className="shadow-md bg-green-600 rounded-b-2xl">
+        <header className="shadow-md bg-green-600">
             <NavWrapper>
                 <div className="flex justify-between w-full">
                     <div className="">
@@ -35,6 +35,9 @@ const AppHeader = ({session}) => {
                             <MenuIcon className="h-8 w-8 text-white"/>
                         </button>
                         
+                    </div>
+                    <div className="flex items-center">
+                      <h1 className="text-xl font-bold uppercase text-white">Activities</h1>
                     </div>
                     <div className="">
                         <DotsVerticalIcon className="h-8 w-8 text-white"/>
@@ -48,6 +51,7 @@ const AppHeader = ({session}) => {
                             }}>
                                 {/* <Image src={image} layout="fill" objectFit="cover"/> */}
                             </div>
+                            
                             <div className="flex py-2 items-center">
                               <h2 className="font-bold text-2xl md:text-3xl">
                                   {name}
@@ -55,13 +59,13 @@ const AppHeader = ({session}) => {
                               <BadgeCheckIcon className="h-5 w-5 text-green-600 mt-1 ml-1"/>
                             </div>
                         </div>
-                        <ul className="pl-5  pb-5 pt-4 text-gray-700 space-y-6 lg:space-y-4 ">
-                          <li className="flex space-x-3"><PencilIcon className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
-                          <li className="flex space-x-3"><CogIcon className="h-6 w-6"/> <span className="font-bold">Settings</span></li>
-                          <li className="flex space-x-3"><SupportIcon className="h-6 w-6"/> <span className="font-bold">Support</span></li>
-                          <li className="flex space-x-3"><CubeTransparentIcon className="h-6 w-6"/> <span className="font-bold">Request Feature</span></li>
-                          <li className="flex space-x-3"><ShieldCheckIcon className="h-6 w-6"/> <span className="font-bold">Privacy Policy</span></li>
-                          <li className="flex space-x-3"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
+                        <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4">
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><PencilIcon className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><CogIcon className="h-6 w-6"/> <span className="font-bold">Settings</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><SupportIcon className="h-6 w-6"/> <span className="font-bold">Support</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><CubeTransparentIcon className="h-6 w-6"/> <span className="font-bold">Feature Request</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ShieldCheckIcon className="h-6 w-6"/> <span className="font-bold">Privacy Policy</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
                         </ul>
                         <div className="absolute py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
                           <p className="font-bold">Build Version 1.0.0</p>
