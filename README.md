@@ -1,7 +1,7 @@
 ## StreamIO
 
-An online video conferencing and collaboration platform build to enhence the learning experience of students as well as help instructor deliver content effectively.
-Initial develelopment begun in january 2022 by Cephas Chapa a software engineer from Zambia. 
+An online video conferencing and collaboration platform build to enhence the learning experience of students as well as help instructors deliver content effectively.
+Initial development begun in january 2022 by Cephas Chapa a software engineer from Zambia. 
 
 ## Features
 
@@ -34,6 +34,7 @@ CI / CD & DevOps
 - Vercel
 - Heroku
 - GIthub
+- Docker
 
 Testing
 - Jest
