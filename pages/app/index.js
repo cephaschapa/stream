@@ -36,7 +36,7 @@ const AccountPage = () =>{
                             </button>
                         </div>
                         <div className="snap-x mx-auto snap-mandatory h-screen flex overflow-scroll space-x-2">
-                            <div class="snap-start w-screen">
+                            <div className="snap-start w-screen">
                                 <div className="flex items-center justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
                                     Lorem ipsum
                                 </div>
