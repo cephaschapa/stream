@@ -215,10 +215,12 @@ function Header() {
                             <span className="font-bold">{name}</span>
                             
                       </div> 
-                    <button className="bg-green-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
-                      App Dashboard
-                    </button>
-                    <button className="bg-slate-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
+                    <Link href="/app">
+                      <button className="bg-green-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
+                        App Dashboard
+                      </button>
+                    </Link>
+                    <button onClick={()=>signOut()} className="bg-slate-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
                       Sign Out
                     </button>
                   </>
