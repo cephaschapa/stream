@@ -21,7 +21,7 @@ export default NextAuth({
             // scope:
             // 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
             authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
-            redirect_uri: 'https://streamio.cephaschapa.xyz/api/auth/callback/google',
+            // redirect_uri: 'https://streamio.cephaschapa.xyz/api/auth/callback/google',
             // code_challenge_method: 'S256',
             // code_challenge: 'raKeMh3w4o6mqFa-57l7NInk2aQJMhHJ41lfLvP0dMc',
             // scope: 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
@@ -49,11 +49,11 @@ export default NextAuth({
 
     jwt: {
         encryption: true
-      },
+    },
     
     callbacks: {
         async jwt(token, account) {
-            if (account ?.accessToken) {
+            if (account?.accessToken) {
                 token.accessToken = account.accessToken
             }
             return token;
