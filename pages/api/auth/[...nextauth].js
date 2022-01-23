@@ -18,13 +18,16 @@ export default NextAuth({
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            scope:
+            'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
             authorization: {
                 params: {
                   prompt: "consent",
                   access_type: "offline",
                   response_type: "code"
                 }
-              }
+            }
+            
         }),
         FacebookProvider({
             clientId: process.env.FACEBOOK_CLIENT_ID,
@@ -43,5 +46,24 @@ export default NextAuth({
         //     clientSecret: process.env.INSTAGRAM_CLIENT_SECRET
         // })
     ],
-    secret: "k40SfY8ML34vylVPkWtwQ9tFwQ183i4h/W6IcURn4c8="
+    secret: process.env.SECRET_KEY,
+
+    jwt: {
+        encryption: true
+      },
+    
+    callbacks: {
+        async jwt(token, account) {
+            if (account ?.accessToken) {
+                token.accessToken = account.accessToken
+            }
+            return token;
+            },
+            redirect: async (url, _baseUrl)=>{
+            if (url === '/user') {
+                return Promise.resolve('/')
+            }
+            return  Promise.resolve('/')
+            }
+        }
 })
