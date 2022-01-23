@@ -44,11 +44,11 @@ export default NextAuth({
     
     callbacks: {
             redirect: async (url, _baseUrl)=>{
-            if (url === '/api/auth/signin') {
+            if (url === '/') {
                 
                 return Promise.resolve('/app')
             }
-            return  Promise.resolve('/api/auth/signin')
+            return  Promise.resolve('/')
             }
         }
 })
