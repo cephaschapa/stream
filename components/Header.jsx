@@ -16,7 +16,7 @@ function Header() {
     const image = '';
     const name =  '';
     const email = '';
-    console.log(session.status)
+    console.log(session)
 
     if(session.status === 'loading') {
         console.log("Loading");
