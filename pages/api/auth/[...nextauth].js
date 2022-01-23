@@ -18,14 +18,6 @@ export default NextAuth({
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            // scope:
-            // 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
-            authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
-            redirect_uri: 'https://streamio.cephaschapa.xyz/api/auth/callback/google',
-            // code_challenge_method: 'S256',
-            // code_challenge: 'raKeMh3w4o6mqFa-57l7NInk2aQJMhHJ41lfLvP0dMc',
-            scope: 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
-            // flowName: 'GeneralOAuthFlow'
         }),
         FacebookProvider({
             clientId: process.env.FACEBOOK_CLIENT_ID,
@@ -51,17 +43,12 @@ export default NextAuth({
     },
     
     callbacks: {
-        async jwt(token, account) {
-            if (account?.accessToken) {
-                token.accessToken = account.accessToken
-            }
-            return token;
-            },
             redirect: async (url, _baseUrl)=>{
-            if (url === '/app') {
-                return Promise.resolve('/')
+            if (url === '/api/auth/signin') {
+                
+                return Promise.resolve('/app')
             }
-            return  Promise.resolve('/')
+            return  Promise.resolve('/api/auth/signin')
             }
         }
 })
