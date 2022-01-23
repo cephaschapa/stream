@@ -18,15 +18,14 @@ export default NextAuth({
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            scope:
-            'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
-            authorization: {
-                params: {
-                  prompt: "consent",
-                  access_type: "offline",
-                  response_type: "code"
-                }
-            }
+            // scope:
+            // 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
+            authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+            redirect_uri: 'http://localhost:3000/api/auth/callback/google',
+            code_challenge_method: 'S256',
+            code_challenge: 'raKeMh3w4o6mqFa-57l7NInk2aQJMhHJ41lfLvP0dMc',
+            scope: 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
+            flowName: 'GeneralOAuthFlow'
             
         }),
         FacebookProvider({
@@ -60,7 +59,7 @@ export default NextAuth({
             return token;
             },
             redirect: async (url, _baseUrl)=>{
-            if (url === '/user') {
+            if (url === '/app') {
                 return Promise.resolve('/')
             }
             return  Promise.resolve('/')
