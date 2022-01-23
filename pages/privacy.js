@@ -16,7 +16,7 @@ const PrivacyPage = () =>{
                 <div className="pt-20 lg:pt-24 pr-3 dark:text-white h-full w-full pb-20 ">
                     <h1 className="text-3xl font-bold">Privacy Policy</h1>
                     <p className="pt-3">
-                        Your privacy is important to us. It is StreamIO's policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <Link href='https://streamio.cephaschapa.com'><span className="text-green-600 font-bold">https://streamio.cephaschapa.xyz</span></Link>, and other sites we own and operate.
+                        Your privacy is important to us. It is StreamIO&apos;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <Link href='https://streamio.cephaschapa.com'><span className="text-green-600 font-bold">https://streamio.cephaschapa.xyz</span></Link>, and other sites we own and operate.
                         This policy is effective as of 23 January 2022 and was last updated on 23 January 2022.
                     </p>
                     <p className="pt-3 ">
