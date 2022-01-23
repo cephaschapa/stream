@@ -28,26 +28,95 @@ const AccountPage = () =>{
         <>
             <AppHeader session={session}/>
                 <NavWrapper>
-                    <div className="h-screen w-full">
+                    <div className="h-screen w-full py-16">
                         <div className="flex items-center justify-between w-full py-2 px-2">
                             <p className="font-bold">Upcoming Meetings</p>
                             <button className="border p-3 rounded-full">
                                 <ArrowRightIcon className="h-6 w-6"/>
                             </button>
                         </div>
-                        <div className="snap-x mx-auto snap-mandatory h-screen flex overflow-scroll space-x-2">
+                        <div className="snap-x mx-auto snap-mandatory flex overflow-scroll space-x-2">
                             <div className="snap-start w-screen">
-                                <div className="flex items-center justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
                                     Lorem ipsum
                                 </div>
                             </div>
                             <div className="snap-start w-screen">
-                                <div className="flex items-center justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
                                     Lorem ipsum
                                 </div>
                             </div>
                             <div className="snap-start w-screen">
-                                <div className="flex items-center justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between w-full py-2 px-2">
+                            <p className="font-bold">Upcoming Events</p>
+                            <button className="border p-3 rounded-full">
+                                <ArrowRightIcon className="h-6 w-6"/>
+                            </button>
+                        </div>
+                        <div className="snap-x mx-auto snap-mandatory flex overflow-scroll space-x-2">
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between w-full py-2 px-2">
+                            <p className="font-bold">Events You Subscribe To</p>
+                            <button className="border p-3 rounded-full">
+                                <ArrowRightIcon className="h-6 w-6"/>
+                            </button>
+                        </div>
+                        <div className="snap-x mx-auto snap-mandatory flex overflow-scroll space-x-2">
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between w-full py-2 px-2">
+                            <p className="font-bold">Events Around You</p>
+                            <button className="border p-3 rounded-full">
+                                <ArrowRightIcon className="h-6 w-6"/>
+                            </button>
+                        </div>
+                        <div className="snap-x mx-auto snap-mandatory flex overflow-scroll space-x-2 mb-16">
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
+                                    Lorem ipsum
+                                </div>
+                            </div>
+                            <div className="snap-start w-screen">
+                                <div className="flex items-center streamio-hero justify-center h-52 bg-gray-100 w-screen p-2 rounded-2xl">
                                     Lorem ipsum
                                 </div>
                             </div>

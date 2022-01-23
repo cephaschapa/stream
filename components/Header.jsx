@@ -5,10 +5,29 @@ import { ChevronDoubleDownIcon, ChevronDownIcon, ColorSwatchIcon, MenuAlt3Icon, 
 import {useRouter} from 'next/router';
 import Link from 'next/link';
 import Portal from '@reach/portal';
-import { AnnotationIcon, CalendarIcon, DocumentIcon, VideoCameraIcon, ViewGridAddIcon } from "@heroicons/react/solid";
+import { AnnotationIcon, BellIcon, CalendarIcon, CogIcon, DocumentIcon, VideoCameraIcon, ViewGridAddIcon } from "@heroicons/react/solid";
 import {useTheme} from 'next-themes';
 
+import { useSession, signOut } from "next-auth/react";
+
+
 function Header() {
+    const session = useSession();
+    const image = '';
+    const name =  '';
+    const email = '';
+    console.log(session.status)
+
+    if(session.status === 'loading') {
+        console.log("Loading");
+    }else if(session.status === 'unauthenticated'){
+        console.log("Unauthenticated");
+    } else{
+        console.log(session.data)
+        image = session.data["user"].image;
+        name = session.data["user"].name;
+        email = session.data["user"].email
+    }
     const router = useRouter();
 
     const {theme, setTheme} = useTheme();
@@ -28,20 +47,35 @@ function Header() {
     
     return (
         <div>
+            
             <header className="h-16 bg-opacity-5 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-0 lg:z-50">
                 <Wrapper>
-                    <div className="grid grid-cols-2 w-full">
-                        <div className="flex space-x-2 relative items-center">
+                    <div className="grid grid-cols-2 w-full cursor-pointer">
+                        <Link href='/'>
+                          <div className="flex space-x-2 relative items-center lg:w-52">
                             <div className="relative h-12 w-12">
-                            <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover" alt="streamio-logo"/>
+                                <Image src="/assets/images/logo1.svg" layout="fill" objectFit="cover" alt="streamio-logo"/>
                             </div>
                             <span className="text-2xl font-bold dark:text-white text-gray-600">StreamIO</span>
-                        </div>
+                          </div>
+                        </Link>
                         <div className="hidden lg:flex justify-end items-center w-full">
                             <ul className="flex space-x-4 text-black items-center">
-                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">Home</li>
-                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">Features</li>
-                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">About</li>
+                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">
+                                  <Link href='/'>
+                                    Home
+                                  </Link>
+                                </li>
+                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">
+                                  <Link href='#features'>
+                                    Features
+                                  </Link>
+                                </li>
+                                <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">
+                                  <Link href='/about'>
+                                    About
+                                  </Link>
+                                </li>
                                 <li>
                                 <Dropdown>
                                   <DropdownToggle>
@@ -71,23 +105,27 @@ function Header() {
                                 </li>
                                 
                                 {
-                                  isLoggedIn? <button type="button" onClick={toggle2} aria-label="Profile Button" className="text-green-600 whitespace-nowrap hover:text-white space-x-3 dark:border-white dark:text-white border-2 border-green-600 px-5 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full flex items-center ">
-                                    <UserCircleIcon className="h-7 w-7 rounded-full"/>
-                                    <span>Cephas Chapa</span>
-                                  </button> : <>
-                                    <Link href="/login">
-                                      <button aria-label="Sign In" className="text-white  bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase">Login</button>
-                                    </Link>
-                                    <Link href="/register">
-                                      <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase dark:border-none">Sign Up</button>
-                                    </Link>
-                                  </>
+                                  session.status === 'unauthenticated' ?  <>
+                                  <Link href="/login">
+                                    <button aria-label="Sign In" className="text-white  bg-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase">Login</button>
+                                  </Link>
+                                  <Link href="/register">
+                                    <button aria-label="Sign Up" className="hover:text-white bg-white border border-green-600 cursor-pointer font-bold p-3 transition duration-200 hover:bg-green-500 rounded-full w-32 uppercase dark:border-none">Sign Up</button>
+                                  </Link>
+                                </> : 
+                                <div onClick={toggle2} className="text-green-600 whitespace-nowrap hover:text-white space-x-3 dark:border-white dark:text-white px-5 cursor-pointer font-bold p-2 transition duration-200 hover:bg-green-600 rounded-full flex items-center ">
+                                  <div className="relative h-8 w-8 rounded-full border-2" style={{
+                                    background: `url(${image}) no-repeat center`,
+                                    backgroundSize: 'cover'
+                                  }}></div>
+                                  <span>{name}</span>
+                                </div>
                                 }
                                 
                             </ul>
                         </div>
                         <div className="flex lg:hidden items-center justify-end">
-                            <button aria-label="Menu" name="Menu Button" onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-2xl  border-white p-1">
+                            <button aria-label="Menu" name="Menu Button" onClick={toggle} className=" flex flex-col items-center justify-center border space-y-1.5 h-12 w-12 rounded-2xl  dark:border-white p-1">
                                 {/* <MenuAlt3Icon className="h-8 w-8 font-light text-gray-500"/> */}
                                 <div className="w-7 bg-white transition duration-300 dark:border-slate-100 border border-gray-500 rounded-full"></div>
                                 <div className="w-7 bg-white transition duration-300 dark:border-slate-100 border border-gray-500 rounded-full"></div>
@@ -97,64 +135,50 @@ function Header() {
                     </div>
                 </Wrapper>
                 <Drawer isOpen={isOpen} toggle={toggle2} position="left">
-                  <div className="w-full h-52 streamio-hero border-b dark:border-none border-gray-300">
+                  <div className="w-full  h-52 streamio-hero border-b dark:border-none border-gray-300">
                     <DrawerHeader>
-                      <UserCircleIcon className="h-12 text-green-600 w-12"/>
-                      Cephas Chapa
-                      <p className="text-lg">cephaschapa@gmail.com</p>
+                    <div className="relative h-16 w-16 rounded-full border-2" style={{
+                        background: `url(${image}) no-repeat center`,
+                        backgroundSize: 'cover'
+                      }}></div>
+                      <p className="font-bold"> {name}</p>
+                      <p className="text-lg font-bold">{email}</p>
                     </DrawerHeader>
                     
                   </div>
                   <DrawerBody>
-                    <ul className="space-y-3 pt-8">
-                        <li className="flex cursor-pointer items-center space-x-4 hover:bg-gray-100  p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
-                          <div>
-                            <ViewGridAddIcon className="w-7 h-7 text-green-600"/>
-                          </div>
-                          <div>
-                            <p className="text-xl">Account</p>
-                          </div>
-                        </li>
+                    <ul className="space-y-1 pt-3">
+                        <Link href='/app'>
+                          <li className="flex cursor-pointer items-center space-x-4 hover:bg-gray-100  p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
+                            <div>
+                              <ViewGridAddIcon className="w-6 h-6 text-green-600"/>
+                            </div>
+                            <div>
+                              <p className="">App Dashboard</p>
+                            </div>
+                          </li>
+                        </Link>
                         <li className="flex cursor-pointer  items-center space-x-4 hover:bg-gray-100 p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
                           <div>
-                            <UserGroupIcon className="w-7 h-7 text-green-600"/>
+                            <BellIcon className="w-6 h-6 text-green-600"/>
                           </div>
                           <div>
-                            <p className="text-xl">My Meetings</p>
+                            <p className="">Notifications</p>
                           </div>
                         </li>
                         <li className="flex cursor-pointer items-center space-x-4 hover:bg-gray-100  p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
                           <div>
-                            <VideoCameraIcon className="w-7 h-7 text-green-600"/>
+                            <CogIcon className="w-6 h-6 text-green-600"/>
                           </div>
                           <div>
-                            <p className="text-xl">My Recordings</p>
+                            <p className="">Settings</p>
                           </div>
                         </li>
-                        <li className="flex cursor-pointer items-center space-x-4 hover:bg-gray-100 dark:hover:bg-slate-700 transition duration-200  p-3 rounded-full ">
-                          <div>
-                            <CalendarIcon className="w-7 h-7 text-green-600"/>
-                          </div>
-                          <div>
-                            <p className="text-xl">Events</p>
-                          </div>
-                        </li>
-                        <li className="flex cursor-pointer items-center space-x-4 hover:bg-gray-100  p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
-                          <div>
-                            <AnnotationIcon className="w-7 h-7 text-green-600"/>
-                          </div>
-                          <div>
-                            <p className="text-xl">Chat</p>
-                          </div>
-                        </li>
-                        <li className="flex  cursor-pointer items-center space-x-4 hover:bg-gray-100  p-3 rounded-full dark:hover:bg-slate-700 transition duration-200">
-                          <div>
-                            <DocumentIcon className="w-7 h-7 text-green-600"/>
-                          </div>
-                          <div>
-                            <p className="text-xl">Shared Files</p>
-                          </div>
-                        </li>
+                        <div>
+                              <button onClick={()=> signOut() } className="bg-green-600 p-2 w-1/2 font-bold text-white rounded-full">
+                                Sign Out
+                              </button>
+                        </div>
                       </ul>
                   </DrawerBody>
                   
@@ -164,7 +188,7 @@ function Header() {
             <Menu open={open}>
                 <button
                 aria-label="Close"
-                className="absolute p-2 top-3 rounded-2xl right-5 border text-5xl text-white cursor-pointer"
+                className="absolute p-2 top-3 rounded-2xl right-5 border text-5xl dark:text-white cursor-pointer"
                 onClick={toggle}
                 >
                   <XIcon className="h-7 w-7"/>

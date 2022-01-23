@@ -15,14 +15,21 @@ export default NextAuth({
                 clientSecret: process.env.GITHUB_SECRET
             }
         ),
-        // GoogleProvider({
-        //     clientId: process.env.GOOGLE_CLIENT_ID,
-        //     clientSecret: process.env.GOOGLE_CLIENT_SECRET
-        // }),
-        // FacebookProvider({
-        //     clientId: process.env.FACEBOOK_CLIENT_ID,
-        //     clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-        // }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            authorization: {
+                params: {
+                  prompt: "consent",
+                  access_type: "offline",
+                  response_type: "code"
+                }
+              }
+        }),
+        FacebookProvider({
+            clientId: process.env.FACEBOOK_CLIENT_ID,
+            clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+        }),
         // TwitterProvider({
         //     clientId: process.env.TWITTER_CLIENT_ID,
         //     clientSecret: process.env.TWITTER_CLIENT_SECRET

@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
+import Head from 'next/head';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -13,7 +14,9 @@ export default function Home() {
       <Header />
       {/* Hero */}
       <Hero />
+      {/* Footer */}
+      <Footer />
       
     </div>
-  )
+  );
 }

@@ -4,7 +4,7 @@ import NavWrapper from "./NavWrapper";
 import Portal from '@reach/portal';
 import Image from "next/image";
 import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, ShieldCheckIcon, SupportIcon, ViewListIcon } from "@heroicons/react/solid";
-// import { useSession, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 const AppHeader = ({session}) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -27,7 +27,7 @@ const AppHeader = ({session}) => {
         setIsOpen(!isOpen);
     };
     return(
-        <header className="shadow-md bg-green-600">
+        <header className="shadow-md bg-green-600 fixed top-0 w-full">
             <NavWrapper>
                 <div className="flex justify-between w-full">
                     <div className="">
@@ -52,11 +52,18 @@ const AppHeader = ({session}) => {
                                 {/* <Image src={image} layout="fill" objectFit="cover"/> */}
                             </div>
                             
-                            <div className="flex py-2 items-center">
-                              <h2 className="font-bold text-2xl md:text-3xl">
+                            <div className="py-2 items-center">
+                              <div className="flex py-2 items-center">
+                                 <h2 className="font-bold text-2xl md:text-3xl">
                                   {name}
-                              </h2>
-                              <BadgeCheckIcon className="h-5 w-5 text-green-600 mt-1 ml-1"/>
+                                </h2>
+                                
+                                <BadgeCheckIcon className="h-5 w-5 text-green-600 mt-1 ml-1"/>
+                              </div>
+                              <div>
+                                <p className="">{email}</p>
+                              </div>
+                             
                             </div>
                         </div>
                         <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4">
@@ -67,6 +74,9 @@ const AppHeader = ({session}) => {
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ShieldCheckIcon className="h-6 w-6"/> <span className="font-bold">Privacy Policy</span></li>
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
                         </ul>
+                        <div className="flex px-5 w-full">
+                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={()=>signOut()}>Sign out</button>
+                        </div>
                         <div className="absolute py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
                           <p className="font-bold">Build Version 1.0.0</p>
                         </div>
