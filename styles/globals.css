@@ -11,6 +11,21 @@ body {
   scroll-behavior: smooth;
 }
 
+.church{
+  background: url('/assets/images/event.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.meeting{
+  background: url('/assets/images/meeting.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.event{
+  background: url('/assets/images/church.jpg') no-repeat center;
+  background-size: cover;
+}
+
 
 a {
   color: inherit;
