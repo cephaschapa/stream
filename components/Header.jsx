@@ -198,12 +198,32 @@ function Header() {
                 <MenuItem href="#">Features</MenuItem>
                 <MenuItem href="#">About</MenuItem>
                 <MenuItem href="#">FAQ</MenuItem>
-                <Link href="/login">
-                  <button aria-label="Login" className="bg-green-600 text-white w-full font-bold p-4 rounded-full m-1 uppercase">Sign In</button>
-                </Link>
-                <Link href="/register">
-                  <button aria-label="Theme" className="border-2 border-green-600 w-full dark:text-white font-bold p-4 uppercase rounded-full m-1">Sign Up</button>
-                </Link>
+                {
+                session.status === 'unauthenticated' ?  <>
+                  <Link href="/login">
+                    <button aria-label="Login" className="bg-green-600 text-white w-1/2 font-bold p-3 rounded-full m-1 uppercase">Sign In</button>
+                  </Link>
+                  <Link href="/register">
+                    <button aria-label="Theme" className="border-2 text-white bg-slate-800 w-1/2 dark:text-white font-bold p-3 uppercase rounded-full m-1">Sign Up</button>
+                  </Link> </> : 
+                  <>
+                    <div className="flex items-center justify-center border-t pt-3 flex-col">
+                      <div className="relative  h-16 w-16 rounded-full border-2" style={{
+                              background: `url(${image}) no-repeat center`,
+                              backgroundSize: 'cover'
+                            }}></div>
+                            <span className="font-bold">{name}</span>
+                            
+                      </div> 
+                    <button className="bg-green-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
+                      App Dashboard
+                    </button>
+                    <button className="bg-slate-600 w-1/2 m-1 rounded-full text-white p-3 font-bold mt-3">
+                      Sign Out
+                    </button>
+                  </>
+                  
+                  }
                 <div className="py-5 border-t border-slate-200 dark:border-slate-600 mt-10 space-y-3">
                   <p className="dark:text-white font-bold">THEME PREFERENCE</p>
                   <div className="flex justify-center space-x-2">
@@ -232,7 +252,7 @@ export default Header
 
 /* Logic*/
 const style = {
-    container: `relative z-50 p-3 top-1/4 w-full text-center mt-8`,
+    container: `relative z-50 p-3 top-20 w-full text-center mt-8`,
     item: `text-lg font-bold text-gray-600 cursor-pointer hover:bg-slate-100 p-3 rounded-full dark:text-white`,
     menu: {
       open: `h-full w-full `,
