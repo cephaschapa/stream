@@ -213,6 +213,7 @@ function Header() {
                               backgroundSize: 'cover'
                             }}></div>
                             <span className="font-bold">{name}</span>
+                            <span className="font-bold">{email}</span>
                             
                       </div> 
                     <Link href="/app">
