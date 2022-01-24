@@ -54,20 +54,14 @@ const LoginPage = () => {
                                     
                                    
                                 </form>
-                                <p className="text-center dark:text-white uppercase">Or Login with</p>
+                                <p className="text-center dark:text-white uppercase font-bold">Or Login with</p>
                                 <div className="flex justify-center space-x-3">
-                                    <button onClick={() => signIn()} className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
-                                        <Image src='/assets/images/facebook.png' layout="fill" objectFit="cover" />
+                                    <button onClick={() => signIn()} className="p-3 relative bg-blue-500 rounded-full w-full text-white uppercase transition duration-200 font-bold hover:bg-blue-400">
+                                        Google
                                     </button>
-                                    <div className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
-                                        <Image src='/assets/images/google.png' layout="fill" objectFit="cover" />
-                                    </div>
-                                    <div className="h-12 w-12 relative bg-slate-500 dark:bg-slate-600 rounded-full">
-                                        <Image src='/assets/images/linkedinC.png' layout="fill" objectFit="cover" />
-                                    </div>
                                 </div>
                                 <Link href="/register">
-                                    <p className="text-center cursor-pointer hover:text-green-500 transition duration-200 text-slate-500 dark:text-white font-bold uppercase border-2 border-slate-500 p-3 rounded-full">Create a free account</p>
+                                    <button className="text-center cursor-pointer transition bg-slate-800 duration-200 w-full text-white hover:bg-slate-700 font-bold uppercase p-3 rounded-full">Create a free account</button>
                                 </Link>
                             </div>
                             

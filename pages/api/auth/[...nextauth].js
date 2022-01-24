@@ -9,20 +9,20 @@ import LinkedInProvider from "next-auth/providers/linkedin";
 
 export default NextAuth({
     providers: [
-        GithubProvider(
-            {
-                clientId: process.env.GITHUB_ID,
-                clientSecret: process.env.GITHUB_SECRET
-            }
-        ),
+        // GithubProvider(
+        //     {
+        //         clientId: process.env.GITHUB_ID,
+        //         clientSecret: process.env.GITHUB_SECRET
+        //     }
+        // ),
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         }),
-        FacebookProvider({
-            clientId: process.env.FACEBOOK_CLIENT_ID,
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-        }),
+        // FacebookProvider({
+        //     clientId: process.env.FACEBOOK_CLIENT_ID,
+        //     clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+        // }),
         // TwitterProvider({
         //     clientId: process.env.TWITTER_CLIENT_ID,
         //     clientSecret: process.env.TWITTER_CLIENT_SECRET
