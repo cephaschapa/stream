@@ -48,7 +48,7 @@ export default NextAuth({
                 
                 return Promise.resolve('/app')
             }
-            return  Promise.resolve('/')
+            return  Promise.resolve('/app')
             }
         }
 })
