@@ -207,7 +207,7 @@ function Header() {
                     <button aria-label="Theme" className="border-2 text-white bg-slate-800 w-1/2 dark:text-white font-bold p-3 uppercase rounded-full m-1">Sign Up</button>
                   </Link> </> : 
                   <>
-                    <div className="flex items-center justify-center border-t pt-3 flex-col">
+                    <div className="flex items-center justify-center border-t dark:border-slate-600 pt-3 flex-col">
                       <div className="relative  h-16 w-16 rounded-full border-2" style={{
                               background: `url(${image}) no-repeat center`,
                               backgroundSize: 'cover'
