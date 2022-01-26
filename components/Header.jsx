@@ -48,7 +48,7 @@ function Header() {
     return (
         <div>
             
-            <header className="h-16 bg-opacity-5 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-0 lg:z-50">
+            <header className="h-16 bg-opacity-5 dark:bg-opacity-60 backdrop-filter backdrop-blur-lg bg:white transition duration-300 dark:bg-slate-800 lg:h-20 w-full bg-white shadow-md fixed top-0 z-50 lg:z-50">
                 <Wrapper>
                     <div className="grid grid-cols-2 w-full cursor-pointer">
                         <Link href='/'>
@@ -67,12 +67,12 @@ function Header() {
                                   </Link>
                                 </li>
                                 <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">
-                                  <Link href='#features'>
+                                  <Link href='/#features'>
                                     Features
                                   </Link>
                                 </li>
                                 <li className="text-black dark:hover:bg-slate-700 dark:text-white cursor-pointer font-bold p-3 hover:bg-gray-200 transition duration-200 rounded-full">
-                                  <Link href='/about'>
+                                  <Link href='/#about'>
                                     About
                                   </Link>
                                 </li>

@@ -4,8 +4,12 @@ import {} from '@heroicons/react/solid'
 import Portal from '@reach/portal';
 import { CodeIcon, LockClosedIcon } from "@heroicons/react/outline"
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Hero = () => {
+    const session = useSession()
+    console.log(session)
+    
     const [isOpen, setIsOpen] = React.useState(false);
     const [isLoggedIn, setIsLoggedIn] = React.useState(true)
     const toggle = () => {
@@ -20,13 +24,19 @@ const Hero = () => {
                         <h1 className="font-bold lg:text-8xl dark:text-white text-center text-5xl  text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
                         <p className="text-[#16A34A] dark:text-white lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
-                            {
-                                isLoggedIn ? <button aria-label="Schedule" type="button" onClick={toggle} className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button> : <Link href="/login">
-                                <button aria-label="Schedule" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">Schedule a Meeting</button>
+                          <Link href="/register">
+                            <button aria-label="Register" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GET STARTED</button>
+                          </Link>
+                          {
+                            !session.status === 'unauthenticated' ?
+                            <Link href="/app">
+                               <button aria-label="app" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GOTO APP DASHBOARD</button>
+                            </Link> : 
+                            <Link href="/login">
+                                <button aria-label="login" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">LOGIN TO STREAMIO</button>
                             </Link>
-                            }
-
-                            <div className="lg:w-1/2">
+                          }
+                            {/* <div className="lg:w-1/2">
                                 <form className="flex rounded-full border border-green-600 dark:border-none transition duration-300 dark:bg-slate-600 bg-white h-16 shadow-md">
                                     <div className="flex space-x-2 items-center w-full pl-5">
                                         <LockClosedIcon className="h-6 w-6 text-gray-500 dark:text-white"/>
@@ -34,7 +44,7 @@ const Hero = () => {
                                     </div>
                                     <button aria-label="Join" className="px-5 font-bold p-4 hover:shadow-lg hover:bg-green-500 transition duration-200 rounded-full bg-green-600 text-white lg:w-52">Join</button>
                                 </form>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </Wrapper>

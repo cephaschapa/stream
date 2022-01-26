@@ -3,9 +3,9 @@ import Wrapper from "./Wrapper";
 
 const Footer = () => {
     return(
-        <footer className="flex py-10 bg-slate-800 text-white w-full">
+        <footer className="pt-20 bg-slate-800 text-white w-full footer">
             <Wrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full text-center lg:text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 w-full text-center lg:text-left">
                     <div className="w-full p-3 lg:text-center">
                         <h3 className="text-xl font-bold">
                             QUICK LINKS
@@ -64,8 +64,27 @@ const Footer = () => {
                             
                         </ul>
                     </div>
+                    <div className="w-full p-3 lg:text-center">
+                        <h3 className="text-xl font-bold">
+                            REACH OUT
+                        </h3>
+                        <ul className="py-4 space-y-1">
+                            <Link href="mailto:dev@cephaschapa.com">
+                                <p className="p-2 cursor-pointer transition duration-200 hover:bg-green-600 rounded-full hover:font-bold px-3 hover:text-white">
+                                    dev@cephaschapa.zyx
+                                </p>
+                            </Link>
+                            <Link href="mailto:cephachapa@gmail.com">
+                                <p className="p-2 cursor-pointer transition duration-200 hover:bg-green-600 rounded-full hover:font-bold px-3 hover:text-white">
+                                    cephaschapa@gmail.com
+                                </p>
+                            </Link>
+                            
+                        </ul>
+                    </div>
                 </div>
             </Wrapper>
+            
         </footer>
     )
 }
