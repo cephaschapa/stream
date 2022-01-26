@@ -24,11 +24,13 @@ const Hero = () => {
                         <h1 className="font-bold lg:text-8xl dark:text-white text-center text-5xl  text-[#16A34A]">Fast, reliable, and secure conferencing</h1>
                         <p className="text-[#16A34A] dark:text-white lg:text-2xl text-center">Hold incredible events, share knowledge, build and grow your community and create opportunities.</p>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:w-1/2 lg:space-x-4">
-                          <Link href="/register">
-                            <button aria-label="Register" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GET STARTED</button>
-                          </Link>
+                         {
+                           session.status === 'authenticated' ? '':  <Link href="/register">
+                           <button aria-label="Register" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GET STARTED</button>
+                         </Link>
+                         }
                           {
-                            !session.status === 'unauthenticated' ?
+                            session.status === 'unauthenticated' ?
                             <Link href="/app">
                                <button aria-label="app" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GOTO APP DASHBOARD</button>
                             </Link> : 
