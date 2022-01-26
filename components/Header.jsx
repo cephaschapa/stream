@@ -208,7 +208,7 @@ function Header() {
                   </Link> </> : 
                   <>
                     <div className="flex items-center justify-center border-t dark:border-slate-600 pt-3 flex-col">
-                      <div className="relative  h-16 w-16 rounded-full border-2" style={{
+                      <div className="h-16 w-16 rounded-full border-2" style={{
                               background: `url(${image}) no-repeat center`,
                               backgroundSize: 'cover'
                             }}></div>
