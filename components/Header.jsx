@@ -212,8 +212,8 @@ function Header() {
                               background: `url(${image}) no-repeat center`,
                               backgroundSize: 'cover'
                             }}></div>
-                            <span className="font-bold">{name}</span>
-                            <span className="font-bold">{email}</span>
+                            <span className="font-bold dark:text-white">{name}</span>
+                            <span className="font-bold dark:text-slate-300">{email}</span>
                             
                       </div> 
                     <Link href="/app">
