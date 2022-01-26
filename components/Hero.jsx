@@ -32,7 +32,7 @@ const Hero = () => {
                          </Link>
                          }
                           {
-                            !session.status === 'unauthenticated' ?
+                            !session.status === 'authenticated' ?
                             <Link href="/app">
                                <button aria-label="app" type="button" className="px-5 shadow-md hover:bg-green-500 transition duration-200 lg:w-1/2 h-16 font-bold rounded-full w-full bg-green-600 text-white">GOTO APP DASHBOARD</button>
                             </Link> : 
