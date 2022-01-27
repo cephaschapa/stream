@@ -11,7 +11,7 @@ const About = () => {
                         <div className="flex py-5 items-center justify-center lg:justify-start w-full">
                             <div className="dark:text-white">
                                 <h1 className="text-5xl py-3 font-bold text-center md:text-left">About</h1>
-                                <p className="text-2xl text-center md:text-left md:text-4xl">Our mission is to enhance online collaboration, connect communities and institutions.</p>
+                                <p className="text-2xl text-center md:text-left md:text-4xl">Our mission is to enhance online collaboration by connecting communities and institutions.</p>
                             </div>
                         </div>
                         <div className="flex flex-col md:flex-row justify-center items-center h-full">
