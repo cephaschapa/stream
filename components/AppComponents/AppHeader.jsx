@@ -5,6 +5,7 @@ import Portal from '@reach/portal';
 import Image from "next/image";
 import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, ShieldCheckIcon, SupportIcon, ViewListIcon } from "@heroicons/react/solid";
 import { useSession, signOut } from "next-auth/react";
+import MainModal from "../Reusables/Modals";
 
 const AppHeader = ({session}) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -26,8 +27,25 @@ const AppHeader = ({session}) => {
     const toggle = () => {
         setIsOpen(!isOpen);
     };
+
+    const handleSignOut = () =>{  
+
+      <MainModal />
+      setInterval(()=>{
+        
+        signOut();
+      },1000)
+      
+      
+    }
+
+    if(session){
+      
+    }
+
     return(
         <header className="shadow-md bg-green-600 fixed top-0 w-full">
+            
             <NavWrapper>
                 <div className="flex justify-between w-full">
                     <div className="">
@@ -75,7 +93,7 @@ const AppHeader = ({session}) => {
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
                         </ul>
                         <div className="flex px-5 w-full">
-                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={()=>signOut()}>Sign out</button>
+                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={handleSignOut}>Sign out</button>
                         </div>
                         <div className="absolute py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
                           <p className="font-bold">Build Version 1.0.0</p>

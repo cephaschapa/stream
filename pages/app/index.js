@@ -1,11 +1,15 @@
-import { useSession, signOut } from "next-auth/react";
 import React, { useEffect } from "react";
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { ArrowRightIcon } from "@heroicons/react/outline";
+import { ClockIcon } from "@heroicons/react/solid";
+
+// Components and Reusables
+import Loader from "../../components/Reusables/Loader";
 import AppHeader from '../../components/AppComponents/AppHeader';
 import AppBottomNav from '../../components/AppComponents/AppBottomNav';
 import NavWrapper from "../../components/AppComponents/NavWrapper";
-import { ArrowRightIcon } from "@heroicons/react/outline";
-import { ClockIcon } from "@heroicons/react/solid";
+import MainModal from "../../components/Reusables/Modals";
 
 
 
@@ -13,18 +17,15 @@ const AccountPage = () =>{
     const {data: session} = useSession();
     const router = useRouter()
 
+    const {status:authStatus} = useSession()
 
-    useEffect(()=>{
-        if(!session){
-            router.replace('/login');
-        }
-    },[])
-    // const {image, name} = session.user;
-    const signOutHandler = () => {
-        signOut();
-        // redirect to home
+    if(authStatus === 'loading') return <Loader />
+
+    if(authStatus === 'unauthenticated'){
+        // <MainModal />
         router.replace('/login');
     }
+    
     return(
         <>
             <AppHeader session={session}/>

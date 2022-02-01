@@ -1,17 +1,28 @@
-import { LockClosedIcon, MailIcon } from "@heroicons/react/outline";
 import Head from "next/head";
-import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../components/Header";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { LockClosedIcon, MailIcon } from "@heroicons/react/outline";
+
+// Components and Reusables
+import Header from "../components/Header";
+import Loader from "../components/Reusables/Loader";
+
+
 
 const LoginPage = () => {
     const router = useRouter();
-
+    const {status:authStatus} = useSession()
     const {data: session} = useSession();
+   
+    console.log(authStatus)
+
     console.log(session)
-    if(session){
+
+    if(authStatus === 'loading') return <Loader />
+
+    if(authStatus === 'authenticated'){
         router.replace('/app/');
     }
 
@@ -34,18 +45,18 @@ const LoginPage = () => {
                             </div>
                             <div className="w-full space-y-3">
                                 <form className="w-full space-y-3">
-                                    <div className="flex border border-gray-600 dark:bg-slate-600 focus:bg-gray-500 w-full bg-white p-3 rounded-full space-x-3">
+                                    <div className="flex dark:bg-slate-600 focus:bg-gray-500 w-full bg-slate-100 p-3 rounded-full space-x-3">
                                         <MailIcon className="w-6 h-6 text-gray-600 dark:text-white"/>
                                         <input className="bg-none  w-full outline-none bg-transparent dark:text-white" type="email" placeholder="Email*" required/>
                                     </div>
-                                    <div className="flex w-full border border-gray-600 dark:bg-slate-600 bg-white p-3 rounded-full space-x-3">
+                                    <div className="flex w-full dark:bg-slate-600 bg-slate-100 p-3 rounded-full space-x-3">
                                         <LockClosedIcon className="w-6 h-6 text-gray-600 dark:text-white"/>
                                         <input className="bg-none w-full outline-none bg-transparent dark:text-white" type="password" minLength="8" placeholder="Password*" required/>
                                          
                                     </div>
 
                                     <Link href="/recovery">
-                                        <p className="text-slate-800 dark:text-white">Forgot Password?</p>
+                                        <p className="text-slate-800 dark:text-white font-bold">Forgot Password?</p>
                                     </Link>
                                     
                                     <button className="w-full hover:bg-green-500 transition duration-200 p-3 bg-[#16A34A] rounded-full uppercase font-bold text-white">
