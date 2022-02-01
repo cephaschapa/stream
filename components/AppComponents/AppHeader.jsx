@@ -10,6 +10,7 @@ import MainModal from "../Reusables/Modals";
 const AppHeader = ({session}) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [user, setUser] = React.useState({})
+    const [isSigningOut, setIsSigningOut] =  React.useState(false)
     
     const image = '';
     const name =  '';
@@ -30,7 +31,7 @@ const AppHeader = ({session}) => {
 
     const handleSignOut = () =>{  
 
-      <MainModal />
+      setIsSigningOut(true);
       setInterval(()=>{
         
         signOut();
@@ -93,7 +94,9 @@ const AppHeader = ({session}) => {
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
                         </ul>
                         <div className="flex px-5 w-full">
-                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={handleSignOut}>Sign out</button>
+                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={handleSignOut}>{
+                            isSigningOut ? (<>Signing out... </>) : ('Sign Out')
+                          }</button>
                         </div>
                         <div className="absolute py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
                           <p className="font-bold">Build Version 1.0.0</p>

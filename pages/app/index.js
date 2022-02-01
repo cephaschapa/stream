@@ -20,7 +20,7 @@ const AccountPage = () =>{
     const {status:authStatus} = useSession()
 
     if(authStatus === 'loading') return <Loader />
-
+    
     if(authStatus === 'unauthenticated'){
         // <MainModal />
         router.replace('/login');
