@@ -3,14 +3,18 @@ import { DotsVerticalIcon, MenuIcon } from "@heroicons/react/outline";
 import NavWrapper from "./NavWrapper";
 import Portal from '@reach/portal';
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, ShieldCheckIcon, SupportIcon, ViewListIcon } from "@heroicons/react/solid";
 import { useSession, signOut } from "next-auth/react";
 import MainModal from "../Reusables/Modals";
+import {VscAccount, VscCombine, VscDebug, VscReferences, VscReport, VscSettings, VscWorkspaceTrusted} from 'react-icons/vsc'
 
 const AppHeader = ({session}) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [user, setUser] = React.useState({})
     const [isSigningOut, setIsSigningOut] =  React.useState(false)
+
+    const router = useRouter()
     
     const image = '';
     const name =  '';
@@ -32,6 +36,7 @@ const AppHeader = ({session}) => {
     const handleSignOut = () =>{  
 
       setIsSigningOut(true);
+      // router.push('/login')
       setInterval(()=>{
         
         signOut();
@@ -86,19 +91,19 @@ const AppHeader = ({session}) => {
                             </div>
                         </div>
                         <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4">
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><PencilIcon className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><CogIcon className="h-6 w-6"/> <span className="font-bold">Settings</span></li>
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><SupportIcon className="h-6 w-6"/> <span className="font-bold">Support</span></li>
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><CubeTransparentIcon className="h-6 w-6"/> <span className="font-bold">Feature Request</span></li>
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ShieldCheckIcon className="h-6 w-6"/> <span className="font-bold">Privacy Policy</span></li>
-                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><ViewListIcon className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscAccount className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscSettings className="h-6 w-6"/> <span className="font-bold">Settings</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscReport className="h-6 w-6"/> <span className="font-bold">Support</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscCombine className="h-6 w-6"/> <span className="font-bold">Feature Request</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscWorkspaceTrusted className="h-6 w-6"/> <span className="font-bold">Privacy Policy</span></li>
+                          <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscReferences className="h-6 w-6"/> <span className="font-bold">Terms of Service</span></li>                        
                         </ul>
                         <div className="flex px-5 w-full">
                           <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={handleSignOut}>{
                             isSigningOut ? (<>Signing out... </>) : ('Sign Out')
                           }</button>
                         </div>
-                        <div className="absolute py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
+                        <div className="absolute bg-white py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
                           <p className="font-bold">Build Version 1.0.0</p>
                         </div>
                     </Drawer>
