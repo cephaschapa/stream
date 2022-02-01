@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, ShieldCheckIcon, SupportIcon, ViewListIcon } from "@heroicons/react/solid";
 import { useSession, signOut } from "next-auth/react";
 import MainModal from "../Reusables/Modals";
-import {VscAccount, VscCombine, VscDebug, VscReferences, VscReport, VscSettings, VscWorkspaceTrusted} from 'react-icons/vsc'
+import {VscAccount, VscCombine, VscDebug, VscReferences, VscReport, VscSettings, VscSourceControl, VscWorkspaceTrusted} from 'react-icons/vsc'
 
 const AppHeader = ({session}) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -90,7 +90,7 @@ const AppHeader = ({session}) => {
                              
                             </div>
                         </div>
-                        <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4">
+                        <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4 overflow-scroll">
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscAccount className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscSettings className="h-6 w-6"/> <span className="font-bold">Settings</span></li>
                           <li className="flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscReport className="h-6 w-6"/> <span className="font-bold">Support</span></li>
@@ -103,8 +103,11 @@ const AppHeader = ({session}) => {
                             isSigningOut ? (<>Signing out... </>) : ('Sign Out')
                           }</button>
                         </div>
-                        <div className="absolute bg-white py-5 flex flex-col items-center justify-center border-t bottom-0 w-full">
-                          <p className="font-bold">Build Version 1.0.0</p>
+                        <div className="absolute cursor-pointer hover:text-green-600 bg-white py-5 px-5 flex flex-col items-center  border-t bottom-0 w-full">
+                          <div className="flex space-x-3 w-full">
+                            <VscSourceControl className="h-6 w-6 mt-1 ml-1"/>
+                            <p className="font-bold">Build Version 1.0.0</p>
+                          </div>
                         </div>
                     </Drawer>
                 </div>
