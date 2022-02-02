@@ -67,15 +67,15 @@ const ProfilePage = () => {
                     <div>
                     <form className="w-full py-3 space-y-3">
                         <div className="flex space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-8 w-8 p-1 text-slate-600 rounded-full"/>
+                            <VscLock className="h-8 w-8 p-1 text-slate-600"/>
                             <input type="password" className="w-fill outline-none text-xl" placeholder="Current Password"/>
                         </div>
                         <div className="flex space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-8 w-8 p-1 text-slate-600 rounded-full"/>
+                            <VscLock className="h-8 w-8 p-1 text-slate-600"/>
                             <input type="password" className="w-fill outline-none text-xl" placeholder="New Password"/>
                         </div>
                         <button className="w-full p-3 bg-green-600 rounded-full uppercase text-white font-bold">
-                            submit
+                            update
                         </button>
                     </form>
                     </div>
