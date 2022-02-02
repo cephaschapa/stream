@@ -131,7 +131,7 @@ const AppHeader = () => {
                 </div>
             </NavWrapper>
               <Modal isOpen2={isOpen2} toggle2={toggle2}>
-                <ModalHeader>Search Content</ModalHeader>
+                <ModalHeader>Search</ModalHeader>
                 <ModalBody>
                   <div className="">
                       <form className="">
