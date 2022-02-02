@@ -43,7 +43,7 @@ const ProfilePage = () => {
                         </div>
                     </div>
                     {/* details section */}
-                    <p className="border-b pb-2">Personal and Contact Details</p>
+                    <p className="border-b pb-2 font-bold">Personal and Contact Details</p>
                     <div className="">
                         <form className="w-full">
                             <div className="flex space-x-3 w-full py-3">
@@ -63,7 +63,7 @@ const ProfilePage = () => {
                             </button>
                         </form>
                     </div>
-                    <p className="border-b py-2">Update password</p>
+                    <p className="border-b py-2 font-bold my-3">Update password</p>
                     <div>
                     <form className="w-full py-3 space-y-3">
                         <div className="flex space-x-3 w-full py-3 border px-2 rounded-full">
