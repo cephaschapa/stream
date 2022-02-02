@@ -18,6 +18,12 @@ const AppHeader = () => {
     const {data: session} = authStatus;
     console.log(session, authStatus)
 
+    const [isOpen2, setIsOpen2] = React.useState(false);
+
+    const toggle2 = () => {
+      setIsOpen2(!isOpen2);
+    };
+
 
     const [isOpen, setIsOpen] = React.useState(false);   
     const [isSigningOut, setIsSigningOut] =  React.useState(false);
@@ -61,15 +67,17 @@ const AppHeader = () => {
                 <div className="flex justify-between w-full">
                     <div className="flex items-center justify-center">
                         <button type="button" aria-label="Drawer"  onClick={toggle}>
-                            <VscMenu className="h-5 w-5 text-green-600"/>
+                            <VscMenu className="h-6 w-6 text-green-600"/>
                         </button>
                         
                     </div>
                     <div className="flex items-center">
-                      <h1 className="text-xl font-bold uppercase text-white">Activities</h1>
+                      <h1 className="text-xl font-bold  dark:text-white text-slate-700">Edit Profile</h1>
                     </div>
                     <div className="flex items-center justify-center">
-                        <VscSearch className="h-5 w-5 text-green-600"/>
+                        <botton onClick={toggle2}>
+                          <VscSearch className="h-6 w-6 text-green-600"/>
+                        </botton>
                     </div>
                     {/* Drawer Menu */}
                     <Drawer isOpen={isOpen} toggle={toggle} position="left">
@@ -95,7 +103,7 @@ const AppHeader = () => {
                              
                             </div>
                         </div>
-                        <ul className="px-5  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4 overflow-scroll">
+                        <ul className="px-5 h-full  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4 overflow-scroll">
                           <Link href="/app/profile" >
                             <li className={` ${pathname === '/app/profile' ? 'bg-green-600 text-white': ''} flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white`}><VscAccount className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
                           </Link>
@@ -119,8 +127,31 @@ const AppHeader = () => {
                           </div>
                         </div>
                     </Drawer>
+
                 </div>
             </NavWrapper>
+              <Modal isOpen2={isOpen2} toggle2={toggle2}>
+                <ModalHeader>Search Content</ModalHeader>
+                <ModalBody>
+                  <div className="">
+                      <form className="">
+                          <div className="flex w-full items-center bg-slate-100 rounded-full p-3 space-x-3">
+                            <VscSearch className="w-6 h-7"/>
+                            <input className="bg-transparent w-full outline-none" type="search" placeholder="Type keyword"/>
+                          </div> 
+                      </form>
+                  </div>
+                </ModalBody>
+                <ModalFooter>
+                  <button
+                    onClick={toggle2}
+                    className="text-white focus:outline-none m-1.5 rounded-full font-bold px-6 py-2 bg-green-600"
+                  >
+                    Close
+                  </button>
+                  
+                </ModalFooter>
+              </Modal>
         </header>
     )
 }
@@ -213,3 +244,101 @@ const style = {
       </Portal>
     );
   }
+
+
+  /*Logic*/
+
+const style2 = {
+  body: `flex-shrink flex-grow p-4`,
+  headerTitle: `text-2xl md:text-3xl font-bold`,
+  header: `items-start justify-between p-4 border-b border-gray-300`,
+  container: `fixed top-0 overflow-y-auto left-0 z-40 w-full h-full m-0`,
+  overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
+  content: `animate-modal relative flex flex-col bg-white rounded-2xl pointer-events-auto`,
+  footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
+  orientation: `mt-12 mx-8 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12 focus:outline-none`,
+};
+
+function Modal({ children, isOpen2, toggle2 }) {
+  const ref = React.useRef();
+
+  // close modal on click outside
+  React.useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!ref.current?.contains(event.target)) {
+        if (!isOpen2) return;
+        toggle2(false);
+      }
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, [isOpen2, ref, toggle2]);
+
+  // close modal when you click on "ESC" key
+  React.useEffect(() => {
+    const handleEscape = (event) => {
+      if (!isOpen2) return;
+      if (event.key === 'Escape') {
+        toggle2(false);
+      }
+    };
+    document.addEventListener('keyup', handleEscape);
+    return () => document.removeEventListener('keyup', handleEscape);
+  }, [isOpen2, toggle2]);
+
+  // hide scrollbar and prevent body from moving when modal is open
+  //put focus on modal dialogue
+  React.useEffect(() => {
+    if (!isOpen2) return;
+
+    ref.current?.focus();
+
+    const html = document.documentElement;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+
+    html.style.overflow = 'hidden';
+    html.style.paddingRight = `${scrollbarWidth}px`;
+
+    return () => {
+      html.style.overflow = '';
+      html.style.paddingRight = '';
+    };
+  }, [isOpen2]);
+
+  return (
+    <Portal>
+      {isOpen2 && (
+        <>
+          <div className={style2.overlay} />
+          <div className={style2.container}>
+            <div
+              aria-modal={true}
+              className={style2.orientation}
+              ref={ref}
+              role="dialogue"
+              tabIndex={-1}
+            >
+              <div className={style2.content}>{children}</div>
+            </div>
+          </div>
+        </>
+      )}
+    </Portal>
+  );
+}
+
+function ModalHeader({ children }) {
+  return (
+    <div className={style2.header}>
+      <h4 className={style2.headerTitle}>{children}</h4>
+    </div>
+  );
+}
+
+function ModalBody({ children }) {
+  return <div className={style2.body}>{children}</div>;
+}
+
+function ModalFooter({ children }) {
+  return <div className={style2.footer}>{children}</div>;
+}

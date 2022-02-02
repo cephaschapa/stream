@@ -1,6 +1,7 @@
 import { BellIcon, HomeIcon, PlayIcon, TicketIcon, VideoCameraIcon } from "@heroicons/react/outline";
 import NavWrapper from "./NavWrapper";
 import { useRouter } from "next/router";
+import { VscBell, VscCalendar, VscDeviceCameraVideo, VscFileMedia, VscHome } from 'react-icons/vsc'
 
 const AppBottomNav = () => {
     const router = useRouter();
@@ -12,19 +13,19 @@ const AppBottomNav = () => {
             <NavWrapper>
                 <div className="flex w-full bg-white shadow-md px-4 border rounded-full items-center justify-between p-3 py-3">
                     <button className={`${basePath === '' ? 'bg-green-600': ''} p-2 rounded-full`}>
-                        <HomeIcon className={`${basePath === ''? 'text-white': ''} h-6 w-6`}/>
+                        <VscHome className={`${basePath === ''? 'text-white': ''} h-6 w-6`}/>
                     </button>
                     <button>   
-                        <VideoCameraIcon className="h-6 w-6"/>
+                        <VscDeviceCameraVideo className="h-6 w-6"/>
                     </button> 
                     <button> 
-                        <BellIcon className="h-6 w-6"/>
+                        <VscBell className="h-6 w-6"/>
                     </button>
                     <button>
-                        <PlayIcon className="h-6 w-6"/>
+                        <VscFileMedia className="h-6 w-6"/>
                     </button>
                     <button>
-                        <TicketIcon className="h-6 w-6"/>
+                        <VscCalendar className="h-6 w-6"/>
                     </button>
                     
                 </div>
