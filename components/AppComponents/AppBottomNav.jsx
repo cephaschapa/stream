@@ -15,8 +15,8 @@ const AppBottomNav = () => {
                     <button onClick={()=>router.push('/app')} className={`${route === '/app' ? 'bg-green-600': ''} p-2 rounded-full`}>
                         <VscHome className={`${route === '/app'? 'text-white': ''} h-6 w-6`}/>
                     </button>
-                    <button onClick={()=>router.push('/meeting')} className={`${route === '/meeting' ? 'bg-green-600': ''} p-2 rounded-full`}>   
-                        <VscDeviceCameraVideo className={`${route === '/meeting'? 'text-white': ''} h-6 w-6`}/>
+                    <button onClick={()=>router.push('/app/meeting')} className={`${route === '/app/meeting' ? 'bg-green-600': ''} p-2 rounded-full`}>   
+                        <VscDeviceCameraVideo className={`${route === '/app/meeting'? 'text-white': ''} h-6 w-6`}/>
                     </button> 
                     <button className={`${route === '/notifications' ? 'bg-green-600': ''} p-2 rounded-full`}> 
                         <VscBell className={`${route === '/notifications'? 'text-white': ''} h-6 w-6`}/>

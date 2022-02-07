@@ -1,7 +1,9 @@
 import { CalendarIcon } from "@heroicons/react/outline";
 import { VscWatch } from "react-icons/vsc";
+import Router from "next/router";
 
 const MeetingCard = ({title, time}) => {
+    
     return(
         <div className="flex space-x-3 items-center w-full bg-slate-100 rounded-2xl p-3">
             <div className="p-3 bg-green-600 h-full rounded-2xl">
