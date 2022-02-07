@@ -28,7 +28,7 @@ const AccountPage = () =>{
     
     return(
         <>
-            <AppHeader session={session}/>
+            <AppHeader session={session} pageName="Activity"/>
                 <NavWrapper>
                     <div className="h-screen w-full py-16">
                         <div className="flex items-center justify-between w-full py-2 px-2">

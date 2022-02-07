@@ -43,6 +43,7 @@ const ProfilePage = () => {
                         </div>
                     </div>
                     {/* details section */}
+                    {/* cmiyoba@rtsa.org.zm */}
                     <p className="border-b pb-2 font-bold">Personal and Contact Details</p>
                     <div className="">
                         <form className="w-full">

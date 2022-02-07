@@ -11,7 +11,7 @@ import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, Shie
 import {VscAccount, VscCombine, VscDebug, VscLinkExternal, VscMenu, VscReferences, VscReport, VscSearch, VscSettings, VscSourceControl, VscWorkspaceTrusted} from 'react-icons/vsc'
 import { useState } from "react";
 
-const AppHeader = () => {
+const AppHeader = ({pageName}) => {
     const [pathname, setpathname] = useState();
     const authStatus = useSession();
 
@@ -72,7 +72,7 @@ const AppHeader = () => {
                         
                     </div>
                     <div className="flex items-center">
-                      <h1 className="text-xl font-bold  dark:text-white text-slate-700">Edit Profile</h1>
+                      <h1 className="text-xl font-bold  dark:text-white text-slate-700">{pageName}</h1>
                     </div>
                     <div className="flex items-center justify-center">
                         <botton onClick={toggle2}>
