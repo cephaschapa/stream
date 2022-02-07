@@ -17,7 +17,7 @@ const Meeting = () => {
             <Head>
                 <title>StreamIO - Meeting</title>
             </Head>
-            <AppHeader pageName="Meeting"/>
+            <AppHeader pageName="Meetings"/>
             <NavWrapper>
                 <div className="flex flex-col space-y-3 mt-12 w-full py-3">
                     <MeetingActionButtons />
