@@ -47,17 +47,17 @@ const ProfilePage = () => {
                     <p className="border-b pb-2 font-bold">Personal and Contact Details</p>
                     <div className="">
                         <form className="w-full">
-                            <div className="flex space-x-3 w-full py-3">
-                                <VscPerson className="h-9 w-9 p-1 text-slate-600 border rounded-full"/>
-                                <input type="text" className="w-fill outline-none text-xl" placeholder={name}/>
+                            <div className="flex items-center space-x-3 w-full py-3">
+                                <VscPerson className="h-5 w-5 text-slate-600"/>
+                                <input type="text" className="w-full outline-none" placeholder={name}/>
                             </div>
-                            <div className="flex space-x-3 w-full py-3">
-                                <VscDeviceMobile className="h-9 w-9 p-1 text-slate-600 border rounded-full"/>
-                                <input type="tel" className="w-fill outline-none text-xl w-full" placeholder="Phone (requires verification)"/>
+                            <div className="flex items-center space-x-3 w-full py-3">
+                                <VscDeviceMobile className="h-5 w-5 text-slate-600"/>
+                                <input type="tel" className="w-full outline-none" placeholder="Phone (requires verification)"/>
                             </div>
-                            <div className="flex space-x-3 w-full py-3">
-                                <VscMail className="h-9 w-9 p-1 text-slate-600 border rounded-full"/>
-                                <input type="email" className="w-fill outline-none text-xl w-full" placeholder="Add email address"/>
+                            <div className="flex items-center space-x-3 w-full py-3">
+                                <VscMail className="h-5 w-5 text-slate-600"/>
+                                <input type="email" className="w-full outline-none" placeholder="Add email address"/>
                             </div>
                             <button className="w-full p-3 bg-green-600 rounded-full uppercase text-white font-bold">
                                 Update
@@ -67,16 +67,16 @@ const ProfilePage = () => {
                     <p className="border-b py-2 font-bold my-3">Update password</p>
                     <div>
                     <form className="w-full py-3 space-y-3">
-                        <div className="flex space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-8 w-8 p-1 text-slate-600"/>
-                            <input type="password" className="w-fill outline-none text-xl" placeholder="Current Password"/>
+                        <div className="flex items-center space-x-3 w-full py-3 border px-2 rounded-full">
+                            <VscLock className="h-5 w-5 text-slate-600"/>
+                            <input type="password" className="w-fill outline-none" placeholder="Current Password"/>
                         </div>
-                        <div className="flex space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-8 w-8 p-1 text-slate-600"/>
-                            <input type="password" className="w-fill outline-none text-xl" placeholder="New Password"/>
+                        <div className="flex items-center space-x-3 w-full py-3 border px-2 rounded-full">
+                            <VscLock className="h-5 w-5 text-slate-600"/>
+                            <input type="password" className="w-fill outline-none" placeholder="New Password"/>
                         </div>
-                        <button className="w-full p-3 bg-green-600 rounded-full uppercase text-white font-bold">
-                            update
+                        <button className="w-full p-3 bg-green-600 rounded-full text-white font-bold">
+                            Update
                         </button>
                     </form>
                     </div>
