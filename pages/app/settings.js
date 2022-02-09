@@ -1,20 +1,29 @@
 import React from "react";
+import { useRouter } from "next/router";
 import {useTheme} from 'next-themes';
-import { VscAccount, VscColorMode, VscCompass, VscDeviceCameraVideo, VscLoading, VscLocation, VscLock, VscPin } from "react-icons/vsc";
+import { VscAccount, VscArrowLeft, VscColorMode, VscCompass, VscDeviceCameraVideo, VscLoading, VscLocation, VscLock, VscPin } from "react-icons/vsc";
 
 // Components and Reusables
 import AppHeader from "../../components/AppComponents/AppHeader";
 import NavWrapper from "../../components/AppComponents/NavWrapper";
 
 const SettingsPage = () => {
-    const {theme, setTheme} = useTheme()
+    const {theme, setTheme} = useTheme();
+    const router = useRouter();
     console.log(theme)
 
     return(
-        <>
+        <div className="dark:bg-slate-800 h-screen">
             <AppHeader pageName="Settings"/>
             <NavWrapper>
+                
                 <div className="flex flex-col w-full space-y-3 pt-12">
+                <div className="pb-3">
+                    <button className="flex space-x-3" onClick={()=>router.push('/app/')}>
+                        <VscArrowLeft className="h-6 w-6 dark:text-slate-200"/>
+                        <p className="dark:text-slate-200">Home</p>
+                    </button>
+                </div>
                     <div className="w-full border-b dark:border-slate-600">
                         <div className="flex items-center space-x-3 py-2">
                             <VscCompass className="h-5 w-5 dark:text-slate-200"/>
@@ -22,8 +31,7 @@ const SettingsPage = () => {
                         </div>
                         <div className="py-3 dark:text-slate-200">
                             <form>
-                                <select className="w-full border dark:bg-slate-600 dark:border-none  p-3 rounded-full bg-white">
-                                    <option selected disabled>Select region</option>
+                                <select className="w-full outline-none border dark:bg-slate-600 dark:border-none  p-3 rounded-full bg-white">
                                     <option value="sg001">Singapore, SG</option>
                                     <option value="uk001">London, UK</option>
                                     <option value="us001">Fremont, CA</option>
@@ -40,21 +48,21 @@ const SettingsPage = () => {
                         <div className="py-3">
                             <form>
                                 <p className="pb-2 dark:text-slate-200">Video Camera (on joining)</p>
-                                <select className="w-full border dark:bg-slate-600 dark:border-none dark:text-slate-300  p-3 rounded-full bg-white">
+                                <select className="w-full outline-none border dark:bg-slate-600 dark:border-none dark:text-slate-300  p-3 rounded-full bg-white">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>
                             </form>
                             <form className="pt-3">
                                 <p className="pb-2 dark:text-slate-200">Mic (on joining)</p>
-                                <select className="w-full border dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
+                                <select className="w-full outline-none border dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>
                             </form>
                             <form className="pt-3">
                                 <p className="pb-2 dark:text-slate-200">Recordings (on joining)</p>
-                                <select className="w-full border dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
+                                <select className="w-full outline-none border dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>
@@ -69,7 +77,7 @@ const SettingsPage = () => {
                         </div>
                         <div className="py-3">
                             <form>
-                                <select value={theme} onChange={(e)=>setTheme(e.target.value)} className="w-full border dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
+                                <select value={theme} onChange={(e)=>setTheme(e.target.value)} className="w-full border outline-none dark:bg-slate-600 dark:border-none dark:text-slate-300 p-3 rounded-full bg-white">
                                     <option value="dark">Deep Space</option>
                                     <option value="light">Procyon</option>
                                 </select>
@@ -91,7 +99,7 @@ const SettingsPage = () => {
                     
                 </div>
             </NavWrapper>            
-        </>
+        </div>
     )
 }
 

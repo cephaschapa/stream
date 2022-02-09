@@ -62,7 +62,7 @@ const AppHeader = ({pageName}) => {
     }
 
     return(
-        <header className="border-b dark:border-slate-600 bg-white fixed top-0 w-full">
+        <header className="border-b dark:border-none dark:bg-slate-800 bg-white fixed top-0 w-full">
             <NavWrapper>
                 <div className="flex justify-between w-full">
                     <div className="flex items-center justify-center">

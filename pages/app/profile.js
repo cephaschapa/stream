@@ -1,11 +1,12 @@
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 // Components and Reusables
 import AppBottomNav from "../../components/AppComponents/AppBottomNav";
 import AppHeader from "../../components/AppComponents/AppHeader";
 import NavWrapper from "../../components/AppComponents/NavWrapper";
-import { VscDeviceCamera, VscDeviceMobile, VscLock, VscMail, VscPerson } from "react-icons/vsc";
+import { VscArrowLeft, VscDeviceCamera, VscDeviceMobile, VscLock, VscMail, VscPerson } from "react-icons/vsc";
 
 const ProfilePage = () => {
     const authStatus = useSession();
@@ -13,6 +14,8 @@ const ProfilePage = () => {
     const image = '';
     const name =  '';
     const email = '';
+
+    const router = useRouter()
 
     if(!session) {
         console.log("Fetching Data");
@@ -23,11 +26,18 @@ const ProfilePage = () => {
         email = session["user"].email
     }
     return(
-        <>
+        <div className="dark:bg-slate-800 h-screen">
             <AppHeader pageName="Edit Profile"/>
+
             <NavWrapper>
                 <div className="pt-16 w-full">
                     {/* avatat section */}
+                    <div className="pb-3">
+                        <button className="flex space-x-3" onClick={()=>router.push('/app/')}>
+                            <VscArrowLeft className="h-6 w-6 dark:text-slate-200"/>
+                            <p className="dark:text-slate-200">Home</p>
+                        </button>
+                    </div>
                     <div className="">
                         <div className="flex flex-col items-center justify-center w-full">
                             <div className="relative h-24 w-24 rounded-full border-4" style={{
@@ -47,15 +57,15 @@ const ProfilePage = () => {
                     <p className="border-b dark:border-slate-600 pb-2 font-bold dark:text-slate-200">Personal and Contact Details</p>
                     <div className="">
                         <form className="w-full py-3 space-y-2">
-                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3 w-full ">
+                            <div className="flex border dark:bg-slate-600 dark:border-none p-3 rounded-full items-center space-x-3 w-full ">
                                 <VscPerson className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
                                 <input type="text" className="w-full bg-transparent outline-none" placeholder={name}/>
                             </div>
-                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3 w-full py-3">
+                            <div className="flex border dark:bg-slate-600 dark:border-none p-3 rounded-full items-center space-x-3 w-full py-3">
                                 <VscDeviceMobile className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
                                 <input type="tel" className="w-full bg-transparent outline-none" placeholder="Phone (requires verification)"/>
                             </div>
-                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3  w-full py-3">
+                            <div className="flex border dark:bg-slate-600 dark:border-none p-3 rounded-full items-center space-x-3  w-full py-3">
                                 <VscMail className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
                                 <input type="email" className="w-full bg-transparent outline-none" placeholder="Add email address"/>
                             </div>
@@ -83,7 +93,7 @@ const ProfilePage = () => {
 
                 </div>
             </NavWrapper>           
-        </>
+        </div>
     )
 }
 
