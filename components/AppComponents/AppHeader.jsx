@@ -10,6 +10,7 @@ import NavWrapper from "./NavWrapper";
 import { BadgeCheckIcon, BanIcon, CogIcon, CubeTransparentIcon, PencilIcon, ShieldCheckIcon, SupportIcon, ViewListIcon } from "@heroicons/react/solid";
 import {VscAccount, VscCombine, VscDebug, VscLinkExternal, VscMenu, VscReferences, VscReport, VscSearch, VscSettings, VscSourceControl, VscWorkspaceTrusted} from 'react-icons/vsc'
 import { useState } from "react";
+import NavWrapper2 from "./NavWrapper2";
 
 const AppHeader = ({pageName}) => {
     const [pathname, setpathname] = useState();
@@ -63,7 +64,7 @@ const AppHeader = ({pageName}) => {
 
     return(
         <header className="border-b dark:border-none dark:bg-slate-800 bg-white fixed top-0 w-full">
-            <NavWrapper>
+            <NavWrapper2>
                 <div className="flex justify-between w-full">
                     <div className="flex items-center justify-center">
                         <button type="button" aria-label="Drawer"  onClick={toggle}>
@@ -124,7 +125,7 @@ const AppHeader = ({pageName}) => {
                     </Drawer>
 
                 </div>
-            </NavWrapper>
+            </NavWrapper2>
               <Modal isOpen2={isOpen2} toggle2={toggle2}>
                 <ModalHeader>Search</ModalHeader>
                 <ModalBody>

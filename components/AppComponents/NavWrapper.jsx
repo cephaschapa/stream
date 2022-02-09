@@ -1,6 +1,6 @@
 const NavWrapper = ({children}) => {
     return(
-        <div className="flex items-center p-3">
+        <div className="flex h-full items-center p-3 overflow-scroll">
             {
                 children
             }

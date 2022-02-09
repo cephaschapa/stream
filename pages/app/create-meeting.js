@@ -101,7 +101,7 @@ const CreateMeeting = () => {
                             <p className="font-bold">When <span className="text-red-500">*</span></p>
                             <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-full">
                                 <VscWatch className="h-5 w-5"/>
-                                <input className="outline-none w-full bg-transparent" type="datetime-local" placeholder="wfmr-4icb-1l8x"/>
+                                <input className="outline-none w-full bg-transparent" type="datetime-local" placeholder={value}/>
                             </div>
                             <p className="font-bold">Attendees <span className="text-red-500">*</span></p>
                             {error && <p className="text-sm text-rose-600">Add a valid email address.</p>}

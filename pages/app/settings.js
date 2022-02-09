@@ -17,7 +17,7 @@ const SettingsPage = () => {
             <AppHeader pageName="Settings"/>
             <NavWrapper>
                 
-                <div className="flex flex-col w-full space-y-3 pt-12">
+                <div className="flex flex-col w-full h-auto space-y-3 pt-20">
                 <div className="pb-3">
                     <button className="flex space-x-3" onClick={()=>router.push('/app/')}>
                         <VscArrowLeft className="h-6 w-6 dark:text-slate-200"/>
