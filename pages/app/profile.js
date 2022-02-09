@@ -82,9 +82,7 @@ const ProfilePage = () => {
                     </div>
 
                 </div>
-            </NavWrapper>
-            <AppBottomNav />
-            
+            </NavWrapper>           
         </>
     )
 }
