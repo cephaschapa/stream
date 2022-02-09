@@ -3,7 +3,6 @@ import {useTheme} from 'next-themes';
 import { VscAccount, VscColorMode, VscCompass, VscDeviceCameraVideo, VscLoading, VscLocation, VscLock, VscPin } from "react-icons/vsc";
 
 // Components and Reusables
-import AppBottomNav from "../../components/AppComponents/AppBottomNav";
 import AppHeader from "../../components/AppComponents/AppHeader";
 import NavWrapper from "../../components/AppComponents/NavWrapper";
 
@@ -22,7 +21,7 @@ const SettingsPage = () => {
                         </div>
                         <div className="py-3">
                             <form>
-                                <select className="w-full border  p-3 rounded-full">
+                                <select className="w-full border  p-3 rounded-full bg-none">
                                     <option selected disabled>Select region</option>
                                     <option value="sg001">Singapore, SG</option>
                                     <option value="uk001">London, UK</option>
@@ -40,21 +39,21 @@ const SettingsPage = () => {
                         <div className="py-3">
                             <form>
                                 <p className="pb-2">Video Camera (on joining)</p>
-                                <select className="w-full border  p-3 rounded-full">
+                                <select className="w-full border  p-3 rounded-full bg-none">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>
                             </form>
                             <form className="pt-3">
                                 <p className="pb-2">Mic (on joining)</p>
-                                <select className="w-full border  p-3 rounded-full">
+                                <select className="w-full border  p-3 rounded-full bg-none">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>
                             </form>
                             <form className="pt-3">
                                 <p className="pb-2">Recordings (on joining)</p>
-                                <select className="w-full border  p-3 rounded-full">
+                                <select className="w-full border  p-3 rounded-full bg-none">
                                     <option value="0">Turn on</option>
                                     <option value="1">Turn off</option>
                                 </select>

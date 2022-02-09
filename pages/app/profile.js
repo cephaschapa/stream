@@ -59,7 +59,7 @@ const ProfilePage = () => {
                                 <VscMail className="h-5 w-5 text-slate-600"/>
                                 <input type="email" className="w-full outline-none" placeholder="Add email address"/>
                             </div>
-                            <button className="w-full p-3 bg-green-600 rounded-full uppercase text-white font-bold">
+                            <button className="w-full p-3 bg-green-600 rounded-full text-white font-bold">
                                 Update
                             </button>
                         </form>
