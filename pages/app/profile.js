@@ -24,7 +24,7 @@ const ProfilePage = () => {
     }
     return(
         <>
-            <AppHeader />
+            <AppHeader pageName="Edit Profile"/>
             <NavWrapper>
                 <div className="pt-16 w-full">
                     {/* avatat section */}
@@ -44,36 +44,36 @@ const ProfilePage = () => {
                     </div>
                     {/* details section */}
                     {/* cmiyoba@rtsa.org.zm */}
-                    <p className="border-b pb-2 font-bold">Personal and Contact Details</p>
+                    <p className="border-b dark:border-slate-600 pb-2 font-bold dark:text-slate-200">Personal and Contact Details</p>
                     <div className="">
-                        <form className="w-full">
-                            <div className="flex items-center space-x-3 w-full py-3">
-                                <VscPerson className="h-5 w-5 text-slate-600"/>
-                                <input type="text" className="w-full outline-none" placeholder={name}/>
+                        <form className="w-full py-3 space-y-2">
+                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3 w-full ">
+                                <VscPerson className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
+                                <input type="text" className="w-full bg-transparent outline-none" placeholder={name}/>
                             </div>
-                            <div className="flex items-center space-x-3 w-full py-3">
-                                <VscDeviceMobile className="h-5 w-5 text-slate-600"/>
-                                <input type="tel" className="w-full outline-none" placeholder="Phone (requires verification)"/>
+                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3 w-full py-3">
+                                <VscDeviceMobile className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
+                                <input type="tel" className="w-full bg-transparent outline-none" placeholder="Phone (requires verification)"/>
                             </div>
-                            <div className="flex items-center space-x-3 w-full py-3">
-                                <VscMail className="h-5 w-5 text-slate-600"/>
-                                <input type="email" className="w-full outline-none" placeholder="Add email address"/>
+                            <div className="flex border dark:bg-slate-600 p-3 rounded-full items-center space-x-3  w-full py-3">
+                                <VscMail className="h-5 w-5 dark:text-slate-200 text-slate-600"/>
+                                <input type="email" className="w-full bg-transparent outline-none" placeholder="Add email address"/>
                             </div>
                             <button className="w-full p-3 bg-green-600 rounded-full text-white font-bold">
                                 Update
                             </button>
                         </form>
                     </div>
-                    <p className="border-b py-2 font-bold my-3">Update password</p>
+                    <p className="border-b dark:border-slate-600 py-2 font-bold my-3 dark:text-slate-200">Update password</p>
                     <div>
                     <form className="w-full py-3 space-y-3">
-                        <div className="flex items-center space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-5 w-5 text-slate-600"/>
-                            <input type="password" className="w-fill outline-none" placeholder="Current Password"/>
+                        <div className="flex items-center dark:bg-slate-600 dark:border-none space-x-3 w-full py-3 border px-2 rounded-full">
+                            <VscLock className="h-5 w-5  text-slate-600 dark:text-slate-200"/>
+                            <input type="password" className="w-full bg-transparent outline-none" placeholder="Current Password"/>
                         </div>
-                        <div className="flex items-center space-x-3 w-full py-3 border px-2 rounded-full">
-                            <VscLock className="h-5 w-5 text-slate-600"/>
-                            <input type="password" className="w-fill outline-none" placeholder="New Password"/>
+                        <div className="flex items-center dark:bg-slate-600 dark:border-none space-x-3 w-full py-3 border px-2 rounded-full">
+                            <VscLock className="h-5 w-5 text-slate-600 dark:text-slate-200"/>
+                            <input type="password" className="w-full bg-transparent outline-none" placeholder="New Password"/>
                         </div>
                         <button className="w-full p-3 bg-green-600 rounded-full text-white font-bold">
                             Update

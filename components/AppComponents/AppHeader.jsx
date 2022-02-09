@@ -62,27 +62,27 @@ const AppHeader = ({pageName}) => {
     }
 
     return(
-        <header className="border-b bg-white fixed top-0 w-full">
+        <header className="border-b dark:border-slate-600 bg-white fixed top-0 w-full">
             <NavWrapper>
                 <div className="flex justify-between w-full">
                     <div className="flex items-center justify-center">
                         <button type="button" aria-label="Drawer"  onClick={toggle}>
-                            <VscMenu className="h-6 w-6 text-green-600"/>
+                            <VscMenu className="h-6 w-6 dark:text-slate-200 text-green-600"/>
                         </button>
                         
                     </div>
                     <div className="flex items-center">
-                      <h1 className="text-xl font-bold  dark:text-white text-slate-700">{pageName}</h1>
+                      <h1 className="text-xl font-bold dark:text-slate-200 text-slate-700">{pageName}</h1>
                     </div>
                     <div className="flex items-center justify-center">
                         <botton onClick={toggle2}>
-                          <VscSearch className="h-6 w-6 text-green-600"/>
+                          <VscSearch className="h-6 w-6 text-green-600 dark:text-slate-200"/>
                         </botton>
                     </div>
                     {/* Drawer Menu */}
                     <Drawer isOpen={isOpen} toggle={toggle} position="left">
-                        <div className="flex flex-col px-5 py-5 border-b">
-                            <div className="relative h-16 w-16 rounded-full border-4 border-green-600" style={{
+                        <div className="flex flex-col px-5 py-5 border-b dark:border-slate-600">
+                            <div className="relative h-16 w-16 rounded-full border-4 border-green-600 dark:border-slate-600" style={{
                               background: `url(${image}) no-repeat center`,
                               backgroundSize: 'cover'
                             }}>
@@ -91,19 +91,19 @@ const AppHeader = ({pageName}) => {
                             
                             <div className="py-2 items-center">
                               <div className="flex py-2 items-center">
-                                 <h2 className="font-bold text-2xl md:text-3xl">
+                                 <h2 className="font-bold text-2xl md:text-3xl dark:text-slate-200">
                                   {name}
                                 </h2>
                                 
                                 <BadgeCheckIcon className="h-5 w-5 text-green-600 mt-1 ml-1"/>
                               </div>
                               <div>
-                                <p className="">{email}</p>
+                                <p className="dark:text-slate-200">{email}</p>
                               </div>
                              
                             </div>
                         </div>
-                        <ul className="px-5 h-full  pb-5 pt-4 text-gray-700 space-y-4 lg:space-y-4 overflow-scroll">
+                        <ul className="px-5 h-full  pb-5 pt-4 text-gray-700 dark:text-slate-200 space-y-4 lg:space-y-4 overflow-scroll">
                           <Link href="/app/profile" >
                             <li className={` ${pathname === '/app/profile' ? 'bg-green-600 text-white': ''} flex space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white`}><VscAccount className="h-6 w-6"/> <span className="font-bold">Edit Profile</span></li>
                           </Link>
@@ -115,12 +115,7 @@ const AppHeader = ({pageName}) => {
                           <li className="flex items-center space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscWorkspaceTrusted className="h-6 w-6"/> <span className="font-bold">Privacy Policy </span><VscLinkExternal className="h-3 w-3"/></li>
                           <li className="flex items-center space-x-3 p-2 rounded-full transition duration-200 hover:bg-green-600 hover:text-white"><VscReferences className="h-6 w-6"/> <span className="font-bold">Terms of Service </span><VscLinkExternal className="h-3 w-3"/></li>
                         </ul>
-                        <div className="flex px-5 w-full">
-                          <button className="bg-green-600 p-2 rounded-full text-white font-bold w-full" onClick={handleSignOut}>{
-                            isSigningOut ? (<>Signing out... </>) : ('Sign Out')
-                          }</button>
-                        </div>
-                        <div className="absolute cursor-pointer hover:text-green-600 bg-white py-5 px-5 flex flex-col items-center  border-t bottom-0 w-full">
+                        <div className="absolute cursor-pointer hover:text-green-600 bg-white dark:border-none dark:bg-slate-700 dark:text-slate-200 py-5 px-5 flex flex-col items-center  border-t bottom-0 w-full">
                           <div className="flex space-x-3 w-full">
                             <VscSourceControl className="h-6 w-6 mt-1 ml-1"/>
                             <p className="font-bold">Build Version 1.0.0</p>
@@ -167,7 +162,7 @@ const style = {
     },
     body: `flex-shrink  p-4`,
     headerTitle: `text-2xl md:text-3xl font-light`,
-    content: `relative flex flex-col bg-white pointer-events-auto w-96`,
+    content: `relative flex flex-col bg-white dark:bg-slate-800 pointer-events-auto w-96`,
     header: `items-start justify-between p-4 border-b border-gray-300`,
     container: `fixed top-0 left-0 z-40 w-full h-full m-0 overflow-hidden`,
     overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
