@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import AppBottomNav from "../../components/AppComponents/AppBottomNav";
 import AppHeader from "../../components/AppComponents/AppHeader";
 import NavWrapper from "../../components/AppComponents/NavWrapper";
-import { VscArrowLeft, VscDeviceCamera, VscDeviceMobile, VscLock, VscMail, VscPerson } from "react-icons/vsc";
+import { VscArrowLeft, VscDeviceCamera, VscDeviceMobile, VscHome, VscLock, VscMail, VscPerson } from "react-icons/vsc";
 
 const ProfilePage = () => {
     const authStatus = useSession();
@@ -32,12 +32,9 @@ const ProfilePage = () => {
             <NavWrapper>
                 <div className="pt-16 w-full">
                     {/* avatat section */}
-                    <div className="pb-3">
-                        <button className="flex space-x-3" onClick={()=>router.push('/app/')}>
-                            <VscArrowLeft className="h-6 w-6 dark:text-slate-200"/>
-                            <p className="dark:text-slate-200">Home</p>
-                        </button>
-                    </div>
+                    <button className="flex rounded-full p-4 shadow-2xl dark:shadow-gray-50 fixed  bg-white dark:bg-slate-900 border-none bottom-5 right-5 space-x-3" onClick={()=>router.push('/app/')}>
+                        <VscHome className="h-6 w-6 dark:text-slate-200"/>
+                    </button>
                     <div className="">
                         <div className="flex flex-col items-center justify-center w-full">
                             <div className="relative h-24 w-24 rounded-full border-4" style={{

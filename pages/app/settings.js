@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import {useTheme} from 'next-themes';
-import { VscAccount, VscArrowLeft, VscColorMode, VscCompass, VscDeviceCameraVideo, VscLoading, VscLocation, VscLock, VscPin } from "react-icons/vsc";
+import { VscAccount, VscArrowLeft, VscColorMode, VscCompass, VscDeviceCameraVideo, VscHome, VscLoading, VscLocation, VscLock, VscPin } from "react-icons/vsc";
 
 // Components and Reusables
 import AppHeader from "../../components/AppComponents/AppHeader";
@@ -18,12 +18,11 @@ const SettingsPage = () => {
             <NavWrapper>
                 
                 <div className="flex flex-col w-full h-auto space-y-3 pt-20">
-                <div className="pb-3">
-                    <button className="flex space-x-3" onClick={()=>router.push('/app/')}>
-                        <VscArrowLeft className="h-6 w-6 dark:text-slate-200"/>
-                        <p className="dark:text-slate-200">Home</p>
+                
+                    <button className="flex rounded-full p-4 shadow-2xl dark:shadow-gray-50 fixed  bg-white dark:bg-slate-900 border-none bottom-10 right-5 space-x-3" onClick={()=>router.push('/app/')}>
+                        <VscHome className="h-6 w-6 dark:text-slate-200"/>
                     </button>
-                </div>
+                
                     <div className="w-full border-b dark:border-slate-600">
                         <div className="flex items-center space-x-3 py-2">
                             <VscCompass className="h-5 w-5 dark:text-slate-200"/>
