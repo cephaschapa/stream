@@ -5,10 +5,10 @@ import { VscArrowLeft } from "react-icons/vsc";
 
 const MeetingActionButtons2 = ({url, btnText}) => {
     return(
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full relative top-16 px-3 z-0">
             <div>
                 <button className="p-3 border rounded-full" onClick={()=>Router.push('/app/meeting')}>
-                    <VscArrowLeft className="h-5 w-5"/>
+                    <VscArrowLeft className="h-5 w-5 dark:text-slate-200"/>
                 </button>
             </div>
             <div>

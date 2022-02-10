@@ -63,7 +63,7 @@ const AppHeader = ({pageName}) => {
     }
 
     return(
-        <header className="border-b dark:border-none dark:bg-slate-800 bg-white fixed top-0 w-full">
+        <header className="border-b dark:border-none dark:bg-slate-800 bg-white fixed top-0 z-20 w-full">
             <NavWrapper2>
                 <div className="flex justify-between w-full">
                     <div className="flex items-center justify-center">
@@ -131,9 +131,9 @@ const AppHeader = ({pageName}) => {
                 <ModalBody>
                   <div className="">
                       <form className="">
-                          <div className="flex w-full items-center bg-slate-100 rounded-full p-3 space-x-3">
-                            <VscSearch className="w-6 h-7"/>
-                            <input className="bg-transparent w-full outline-none" type="search" placeholder="Type keyword"/>
+                          <div className="flex w-full items-center bg-slate-100 rounded-full p-3 space-x-3 dark:bg-slate-700">
+                            <VscSearch className="w-6 h-7 dark:text-slate-200"/>
+                            <input className="bg-transparent w-full outline-none dark:text-slate-200" type="search" placeholder="Type keyword"/>
                           </div> 
                       </form>
                   </div>
@@ -246,13 +246,13 @@ const style = {
 
 const style2 = {
   body: `flex-shrink flex-grow p-4`,
-  headerTitle: `text-2xl md:text-3xl font-bold`,
-  header: `items-start justify-between p-4 border-b border-gray-300`,
+  headerTitle: `text-2xl md:text-3xl font-bold dark:text-slate-200`,
+  header: `items-start justify-between p-4 border-b border-slate-300 dark:border-slate-600`,
   container: `fixed top-0 overflow-y-auto left-0 z-40 w-full h-full m-0`,
   overlay: `fixed top-0 left-0 z-30 w-screen h-screen bg-black opacity-50`,
-  content: `animate-modal relative flex flex-col bg-white rounded-2xl pointer-events-auto`,
-  footer: `flex flex-wrap items-center justify-end p-3 border-t border-gray-300`,
-  orientation: `mt-12 mx-8 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12 focus:outline-none`,
+  content: `animate-modal relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl pointer-events-auto`,
+  footer: `flex flex-wrap items-center justify-end p-3 border-t border-slate-300 dark:border-slate-600`,
+  orientation: `mt-12 mx-3 pb-6 md:m-auto md:w-6/12 lg:w-4/12 md:pt-12 focus:outline-none`,
 };
 
 function Modal({ children, isOpen2, toggle2 }) {

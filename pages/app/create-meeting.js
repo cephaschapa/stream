@@ -7,7 +7,7 @@ import NavWrapper from "../../components/AppComponents/NavWrapper";
 const CreateMeeting = () => {
     
     const [emails, setEmails] = useState([]);
-    const [value, setValue] = useState('cephaschapa@gmail.com');
+    const [value, setValue] = useState('example@domail.io');
     const [error, setError] = useState(null)
 
     const handleKeyDown = (e) => {
@@ -81,38 +81,38 @@ const CreateMeeting = () => {
      console.log(error)
 
     return(
-        <div>
+        <div className="dark:bg-slate-800 h-screen">
             <AppHeader pageName="Create a Meeting"/>
+            <MeetingActionButtons2 url="/app/join-meeting" btnText="Join a Meeting" />
             <NavWrapper>
                 <div className="mt-12 py-3 w-full">
-                    <MeetingActionButtons2 url="/app/join-meeting" btnText="Join a Meeting" />
                     <div className="flex overflow-scroll mt-0 h-screen items-center justify-center w-full">
                         <form className="w-full space-y-3">
-                            <p className="font-bold">Meeting Subject <span className="text-red-500">*</span></p>
-                            <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-full">
-                                <VscEdit className="h-5 w-5"/>
-                                <input className="outline-none w-full bg-transparent" type="text" placeholder="wfmr-4icb-1l8x"/>
+                            <p className="font-bold dark:text-slate-200">Meeting Subject <span className="text-red-500">*</span></p>
+                            <div className="flex space-x-3 items-center w-full bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <VscEdit className="h-5 w-5 dark:text-slate-200"/>
+                                <input className="outline-none w-full bg-transparent dark:text-slate-200" type="text" placeholder="Subject"/>
                             </div>
-                            <p className="font-bold">Agenda <span className="text-red-500">*</span></p>
-                            <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-2xl">
-                                <VscTextSize className="h-5 w-5"/>
-                                <textarea className="flex outline-none w-full bg-transparent" rows="4" type="text" placeholder="What will be discussed?"></textarea>
+                            <p className="font-bold dark:text-slate-200">Agenda <span className="text-red-500">*</span></p>
+                            <div className="flex space-x-3 items-center w-full bg-slate-100 dark:bg-slate-700 p-3 rounded-2xl">
+                                <VscTextSize className="h-5 w-5 dark:text-slate-200"/>
+                                <textarea className="flex outline-none w-full bg-transparent dark:text-slate-200" rows="4" type="text" placeholder="What will be discussed?"></textarea>
                             </div>
-                            <p className="font-bold">When <span className="text-red-500">*</span></p>
-                            <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-full">
-                                <VscWatch className="h-5 w-5"/>
-                                <input className="outline-none w-full bg-transparent" type="datetime-local" placeholder={value}/>
+                            <p className="font-bold dark:text-slate-200">When <span className="text-red-500">*</span></p>
+                            <div className="flex space-x-3 items-center w-full bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <VscWatch className="h-5 w-5 dark:text-slate-200"/>
+                                <input className="outline-none w-full dark:text-slate-200 bg-transparent " type="datetime-local" placeholder={value}/>
                             </div>
-                            <p className="font-bold">Attendees <span className="text-red-500">*</span></p>
+                            <p className="font-bold dark:text-slate-200">Attendees <span className="text-red-500">*</span></p>
                             {error && <p className="text-sm text-rose-600">Add a valid email address.</p>}
-                            <div className={`${error ? "border border-red-600": ""} flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-full`}>
-                                <VscMail className="h-5 w-5"/>
-                                <input value={value}  onKeyDown={handleKeyDown} onPaste={handlePaste} onChange={handleChange} className="outline-none w-full bg-transparent" type="email" placeholder="wfmr-4icb-1l8x"/>
+                            <div className={`${error ? "border border-red-600": ""} flex space-x-3 items-center w-full bg-slate-100 dark:bg-slate-700 p-3 rounded-full`}>
+                                <VscMail className="h-5 w-5 dark:text-slate-200"/>
+                                <input value={value}  onKeyDown={handleKeyDown} onPaste={handlePaste} onChange={handleChange} className="outline-none w-full dark:text-slate-200 bg-transparent" type="email" placeholder={value}/>
                             </div>
                             <div className="flex space-x-2 p-2 overflow-scroll">
                                 {
                                     emails.map((email, i)=>(
-                                        <div key={i} className="badge flex space-x-2 items-center bg-slate-500 border-none py-3">
+                                        <div key={i} className="badge flex space-x-2 items-center bg-slate-600 border-none py-3">
                                             <span>
                                                 {email}
                                             </span>
@@ -122,12 +122,12 @@ const CreateMeeting = () => {
                                 }
                                 
                             </div>
-                            <p className="font-bold">Attatch Files <span className="text-red-500">*</span></p>
-                            <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-2xl">
+                            <p className="font-bold dark:text-slate-200">Attatch Files <span className="text-red-500">*</span></p>
+                            <div className="w-full bg-slate-100 dark:bg-slate-700 py-5 rounded-2xl">
                                 <label className="flex flex-col space-y-3 items-center justify-center">
-                                    <VscFiles className="h-7 w-7 text-green-600"/>
-                                    <p className="text-sm">Accepted file types: PDF, Word, Excel, PNG</p>
-                                    <input className="outline-none opacity-0 w-full bg-transparent" type="file" placeholder="wfmr-4icb-1l8x"/>
+                                    <VscFiles className="h-7 w-7 text-green-600 dark:text-slate-200"/>
+                                    <p className="text-sm dark:text-slate-200">Accepted file types: PDF, Word, Excel, PNG</p>
+                                    <input className="outline-none opacity-0 w-full bg-transparent dark:text-slate-200" type="file" placeholder="wfmr-4icb-1l8x"/>
                                 </label>
                             </div>
                             <button className="w-full font-bold text-white p-3 bg-green-600 rounded-full">Create Meeting</button>

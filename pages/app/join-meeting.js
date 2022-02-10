@@ -5,17 +5,18 @@ import NavWrapper from "../../components/AppComponents/NavWrapper";
 
 const JoinRoom = () => {
     return(
-        <div>
+        <div className="dark:bg-slate-800 h-screen">
             <AppHeader pageName="Join a Meeting"/>
+            <MeetingActionButtons2 url="/app/create-meeting" btnText="Create a Meeting" />
             <NavWrapper>
-                <div className="mt-12 py-3 w-full">
-                    <MeetingActionButtons2 url="/app/create-meeting" btnText="Create a Meeting" />
+                <div className="flex flex-col justify-start py-3 w-full">
+                    
                     <div className="flex items-center justify-center w-full h-[500px]">
                         <form className="w-full space-y-3">
-                            <p className="font-bold">Enter the meeting code <span className="text-red-500">*</span></p>
-                            <div className="flex space-x-3 items-center w-full bg-slate-100 p-3 rounded-full">
-                                <VscKey className="h-5 w-5"/>
-                                <input className="outline-none bg-transparent" type="text" placeholder="wfmr-4icb-1l8x"/>
+                            <p className="font-bold dark:text-slate-200">Enter the meeting code <span className="text-red-500">*</span></p>
+                            <div className="flex space-x-3 items-center w-full bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <VscKey className="h-5 w-5 dark:text-slate-200"/>
+                                <input className="outline-none bg-transparent dark:text-slate-200" type="text" placeholder="wfmr-4icb-1l8x"/>
                             </div>
                             <button className="w-full font-bold text-white p-3 bg-green-600 rounded-full">Join Meeting</button>
                         </form>
