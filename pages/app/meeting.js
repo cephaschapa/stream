@@ -21,7 +21,7 @@ const Meeting = () => {
             <NavWrapper>
                 <div className="flex flex-col space-y-3 mt-12 w-full py-3">
                     <MeetingActionButtons />
-                    <div className="flex pt-12 flex-col space-y-3 border-t-2 py-3 pb-16">
+                    <div className="flex pt-40 flex-col space-y-3 border-t-2 py-3 pb-16">
                         
                         <p className="font-bold">Your upcoming meetings</p>
                         

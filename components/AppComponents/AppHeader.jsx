@@ -76,9 +76,9 @@ const AppHeader = ({pageName}) => {
                       <h1 className="text-xl font-bold dark:text-slate-200 text-slate-700">{pageName}</h1>
                     </div>
                     <div className="flex items-center justify-center">
-                        <botton onClick={toggle2}>
+                        <button onClick={toggle2}>
                           <VscSearch className="h-6 w-6 text-green-600 dark:text-slate-200"/>
-                        </botton>
+                        </button>
                     </div>
                     {/* Drawer Menu */}
                     <Drawer isOpen={isOpen} toggle={toggle} position="left">
