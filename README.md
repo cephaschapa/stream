@@ -10,7 +10,7 @@ Initial development begun in january 2022 by Cephas Chapa a software engineer fr
 3. Video Recording and Transcription - Take your recordings and notes everywhere you go.
 4. File Sharing - Share files of any format.
 5. Chat service - Realtime Chat service.
-6. Whiteboards - For demonstrations
+6. Whiteboards - For demonstrations. 
 7. Notifications and Reminders - Stay up to date with events and meetings
 8. Augmented Reality - For collaborations enhencements
 
